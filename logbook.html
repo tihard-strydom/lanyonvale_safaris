@@ -1,0 +1,246 @@
+<html lang="en">
+				<head>
+						<meta charset="UTF-8">
+			<title>Lanyonvale Safaris – Hunters’ Logbook & Reviews</title>
+			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+
+		body
+		{font-family:'Georgia', serif;
+		margin:0;
+		padding:0;
+		background-color:#f5ecdf;
+		color:#2f2f2f;}
+
+		header
+		{background:linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+		color:white;
+		padding:40px 20px;
+		text-align:center;
+		position:relative;}
+
+		.sa-flag
+		{position:absolute;
+		top:20px;
+		right:20px;
+		width:50px;}
+
+		.container
+		{max-width:1100px;
+		margin:auto;
+		padding:30px 20px;}
+
+		h1
+		{color:#fff;
+		font-size:48px;
+		margin-bottom:10px;}
+
+		h2
+		{color:#5b3d28;
+		font-size:36px;
+		margin-top:50px;}
+
+		.logbook-entry, .review-entry 
+		{background-color: white;
+		border: 1px solid #d6c1a5;
+		margin-bottom: 30px;
+		padding: 25px;
+		border-radius: 12px;
+		box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
+		transition: 0.3s ease;}
+
+		.logbook-entry:hover, .review-entry:hover 
+		{transform: translateY(-4px);}
+
+		.entry-meta 
+		{font-size: 0.9em;
+		color: #666;
+		margin-bottom: 15px;}
+
+		.stars 
+		{color: #f5b50a;
+		font-size: 18px;}
+
+		.logbook-entry img 
+		{width: 100%;
+		border-radius: 10px;
+		margin-top: 15px;}
+
+		.back-home
+		{display:inline-block;
+		margin:40px auto 0;
+		padding:12px 20px;
+		text-align:center;
+		background-color:#8b6a45;
+		color:white;
+		border-radius:5px;
+		text-decoration:none;}
+
+		.contact-section
+		{margin-top:60px;
+		text-align:center;
+		background-color:#ede3d1;
+		padding:40px;
+		border-radius:12px;}
+
+		.contact-section p
+		{margin-bottom:10px;
+		font-size:18px;}
+
+		footer
+		{background-color:#5b3d28;
+		color:white;
+		text-align:center;
+		padding:30px 20px;
+		margin-top:60px;}
+
+		.menu-toggle
+		{font-size:30px;
+		color:white;
+		background:none;
+		border:none;
+		cursor:pointer;
+		position:fixed;
+		top:20px;
+		left:20px;
+		z-index:1000;}
+
+		.menu
+		{display:none;
+		flex-direction:column;
+		position:fixed;
+		top:60px;
+		left:0;
+		width:100%;
+		background-color:rgba(0,0,0,0.95);
+		padding:30px 0;
+		text-align:center;
+		z-index:999;}
+
+		.menu a
+		{color:white;
+		text-decoration:none;
+		padding:15px 0;
+		font-size:20px;
+		display:block;}
+
+		.menu a:hover
+		{background-color:rgba(255,255,255,0.1);}
+
+		@media(max-width:768px){
+		.package
+		{padding:20px;}
+		h1{font-size:36px;}}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="price_list.html">Price List</a>
+  <a href="logbook.html">Hunters Logbook</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
+</script>
+
+<!-- HEADER -->
+<header>
+
+<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag">
+
+<div>
+<img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width:140px; margin-bottom:20px;">
+<h1>Lanyonvale Safaris</h1>
+<p style="font-size:22px; font-style:italic;">
+Hunters’ Logbook & Guest Experiences
+</p>
+</div>
+</header>
+
+<hr style="border:4px groove #8b6a45; margin:0;">
+
+<div class="container">
+
+<h2>🦌 Hunters’ Logbook</h2>
+
+<div class="logbook-entry">
+
+<h3>Tihard Strydom – Kudu Bull</h3>
+
+<div class="entry-meta">
+April 2026 | Farm Spioenkop, Northern Cape
+</div>
+
+<p>
+“An unforgettable Karoo hunt. The professionalism from the Lanyonvale team stood out from the moment we stepped into the veld. The kudu hunt was challenging, ethical, and one of the most rewarding experiences I’ve ever had. A memory I will carry for life.”
+</p>
+
+<img src="gallery6.jpeg" alt="Tihard Kudu Hunt">
+
+</div>
+
+<h2>🌟 Guest Reviews</h2>
+
+<div class="review-entry">
+
+<h3>Jana Cilliers (South Africa)</h3>
+
+<div class="stars">★★★★★</div>
+
+<p>
+“Our family visit to Lanyonvale Safaris was something truly special. From the warm welcome to the peaceful Karoo evenings, everything felt personal and well cared for. It wasn’t just a trip — it felt like being part of something bigger.”
+</p>
+
+</div>
+
+<div class="review-entry">
+
+<h3>Abri Cilliers (South Africa)</h3>
+
+<div class="stars">★★★★★</div>
+
+<p>“A beautifully run safari experience with incredible attention to detail. The landscapes, sunsets, and hospitality made this one of the most memorable hunting trips I’ve ever experienced in South Africa.”</p>
+
+</div>
+
+<div class="review-entry">
+
+<h3>Franco Cilliers – Professional Hunter</h3>
+
+<div class="stars">★★★★★</div>
+
+<p>“At Lanyonvale Safaris we believe a hunt is about respect — for the animal, the land, and the tradition behind it. Every client leaves with more than a trophy; they leave with a story from the Karoo.”</p>
+
+</div>
+
+<div style="text-align:center;">
+<a href="index.html" class="back-home">← Back to Home</a>
+</div>
+
+</div>
+
+<footer>
+<p>
+&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁
+</p>
+</footer>
+
+</body>
+</html>

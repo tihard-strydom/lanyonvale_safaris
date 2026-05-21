@@ -1,0 +1,371 @@
+<html lang="en">
+				<head>
+						<meta charset="UTF-8">
+			<title>Lanyonvale Safaris – Gallery</title>
+			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+
+		body
+		{font-family:'Georgia', serif;
+		margin:0;
+		padding:0;
+		background-color:#f5ecdf;
+		color:#2f2f2f;}
+
+		header
+		{background:linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+		color:white;
+		padding:40px 20px;
+		text-align:center;
+		position:relative;}
+
+		.sa-flag
+		{position:absolute;
+		top:20px;
+		right:20px;
+		width:50px;}
+
+		.container
+		{max-width:1100px;
+		margin:auto;
+		padding:30px 20px;}
+
+		h1
+		{color:#fff;
+		font-size:48px;
+		margin-bottom:10px;}
+
+		h2
+		{color:#5b3d28;
+		font-size:36px;
+		margin-top:50px;}
+
+		.section-title 
+		{font-size: 34px;
+		font-weight: bold;
+		text-align: center;
+		margin: 60px 0 25px;
+		color: #5b3d28;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		position: relative;}
+
+		.section-title::after 
+		{content: "";
+		display: block;
+		width: 120px;
+		height: 4px;
+		background: linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+		margin: 12px auto 0;
+		border-radius: 2px;}
+
+		.section-title.small 
+		{font-size: 22px;
+		margin: 35px 0 15px;
+		letter-spacing: 1px;}
+
+		.section-title.small::after 
+		{ width: 70px;
+		height: 3px;}
+
+		.gallery-container 
+		{display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 15px;
+		padding: 40px 20px;
+		max-width: 1200px;
+		margin: auto;}
+
+		.gallery-container img 
+		{width: 100%;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: transform 0.2s ease;
+		box-shadow: 2px 4px 12px rgba(0,0,0,0.15);}
+
+		.gallery-container img:hover 
+		{transform: scale(1.03);}
+
+		.lightbox 
+		{position: fixed;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.85);
+		display: none;
+		align-items: center;
+		justify-content: center;
+		z-index: 9999;}
+
+		.lightbox img 
+		{max-width: 90%;
+		max-height: 90%;
+		border: 4px solid white;
+		border-radius: 8px;}
+
+		.lightbox:target 
+		{display: flex;}
+
+		.back-home
+		{display:inline-block;
+		margin:40px auto 0;
+		padding:12px 20px;
+		text-align:center;
+		background-color:#8b6a45;
+		color:white;
+		border-radius:5px;
+		text-decoration:none;}
+
+		.contact-section
+		{margin-top:60px;
+		text-align:center;
+		background-color:#ede3d1;
+		padding:40px;
+		border-radius:12px;}
+
+		.contact-section p
+		{margin-bottom:10px;
+		font-size:18px;}
+
+		footer
+		{background-color:#5b3d28;
+		color:white;
+		text-align:center;
+		padding:30px 20px;
+		margin-top:60px;}
+
+		.menu-toggle
+		{font-size:30px;
+		color:white;
+		background:none;
+		border:none;
+		cursor:pointer;
+		position:fixed;
+		top:20px;
+		left:20px;
+		z-index:1000;}
+
+		.menu
+		{display:none;
+		flex-direction:column;
+		position:fixed;
+		top:60px;
+		left:0;
+		width:100%;
+		background-color:rgba(0,0,0,0.95);
+		padding:30px 0;
+		text-align:center;
+		z-index:999;}
+
+		.menu a
+		{color:white;
+		text-decoration:none;
+		padding:15px 0;
+		font-size:20px;
+		display:block;}
+
+		.menu a:hover
+		{background-color:rgba(255,255,255,0.1);}
+
+		@media(max-width:768px){
+		.package
+		{padding:20px;}
+		h1{font-size:36px;}}
+
+</style>
+	</head>
+
+<body>
+
+<!-- MENU -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="price_list.html">Price List</a>
+  <a href="logbook.html">Hunters Logbook</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
+</script>
+
+<!-- HEADER -->
+<header>
+
+<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag">
+
+<div>
+<img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width:140px; margin-bottom:20px;">
+<h1>Lanyonvale Safaris</h1>
+<p style="font-size:22px; font-style:italic;">
+Gallery – Karoo Hunting & Lodge Experience
+</p>
+</div>
+
+</header>
+<hr style="border:4px groove #8b6a45; margin:0;">
+
+<div class="gallery-container">
+
+<!-- ================= ACCOMMODATION ================= -->
+<div class="section-title small">Accommodation</div>
+
+<a href="#img1"><img src="a1.jpeg"></a>
+<div id="img1" class="lightbox"><a href="#"><img src="a1.jpeg"></a></div>
+
+<a href="#img2"><img src="a2.jpeg"></a>
+<div id="img2" class="lightbox"><a href="#"><img src="a2.jpeg"></a></div>
+
+<a href="#img3"><img src="a3.jpeg"></a>
+<div id="img3" class="lightbox"><a href="#"><img src="a3.jpeg"></a></div>
+
+<a href="#img4"><img src="a4.jpeg"></a>
+<div id="img4" class="lightbox"><a href="#"><img src="a4.jpeg"></a></div>
+
+<a href="#img5"><img src="a5.jpeg"></a>
+<div id="img5" class="lightbox"><a href="#"><img src="a5.jpeg"></a></div>
+
+<a href="#img6"><img src="a6.jpeg"></a>
+<div id="img6" class="lightbox"><a href="#"><img src="a6.jpeg"></a></div>
+
+<a href="#img7"><img src="a7.jpeg"></a>
+<div id="img7" class="lightbox"><a href="#"><img src="a7.jpeg"></a></div>
+
+<a href="#img8"><img src="a8.jpeg"></a>
+<div id="img8" class="lightbox"><a href="#"><img src="a8.jpeg"></a></div>
+
+<a href="#img9"><img src="a9.jpeg"></a>
+<div id="img9" class="lightbox"><a href="#"><img src="a9.jpeg"></a></div>
+
+<a href="#img10"><img src="a10.jpeg"></a>
+<div id="img10" class="lightbox"><a href="#"><img src="a10.jpeg"></a></div>
+
+<a href="#img11"><img src="a11.jpeg"></a>
+<div id="img11" class="lightbox"><a href="#"><img src="a11.jpeg"></a></div>
+
+<!-- ================= HUNTING ================= -->
+<div class="section-title">Hunting Safari</div>
+
+<a href="#h1"><img src="h1.jpeg"></a>
+<div id="h1" class="lightbox"><a href="#"><img src="h1.jpeg"></a></div>
+
+<a href="#h2"><img src="h2.jpeg"></a>
+<div id="h2" class="lightbox"><a href="#"><img src="h2.jpeg"></a></div>
+
+<a href="#h3"><img src="h3.jpeg"></a>
+<div id="h3" class="lightbox"><a href="#"><img src="h3.jpeg"></a></div>
+
+<a href="#h4"><img src="h4.jpeg"></a>
+<div id="h4" class="lightbox"><a href="#"><img src="h4.jpeg"></a></div>
+
+<a href="#h5"><img src="h5.jpeg"></a>
+<div id="h5" class="lightbox"><a href="#"><img src="h5.jpeg"></a></div>
+
+<a href="#h6"><img src="h6.jpeg"></a>
+<div id="h6" class="lightbox"><a href="#"><img src="h6.jpeg"></a></div>
+
+<a href="#h7"><img src="h7.jpeg"></a>
+<div id="h7" class="lightbox"><a href="#"><img src="h7.jpeg"></a></div>
+
+<a href="#h8"><img src="h8.jpeg"></a>
+<div id="h8" class="lightbox"><a href="#"><img src="h8.jpeg"></a></div>
+
+<a href="#h9"><img src="h9.jpeg"></a>
+<div id="h9" class="lightbox"><a href="#"><img src="h9.jpeg"></a></div>
+
+<a href="#h10"><img src="h10.jpeg"></a>
+<div id="h10" class="lightbox"><a href="#"><img src="h10.jpeg"></a></div>
+
+<a href="#h11"><img src="h11.jpeg"></a>
+<div id="h11" class="lightbox"><a href="#"><img src="h11.jpeg"></a></div>
+
+<a href="#h12"><img src="h12.jpeg"></a>
+<div id="h12" class="lightbox"><a href="#"><img src="h12.jpeg"></a></div>
+
+<a href="#h13"><img src="h13.jpeg"></a>
+<div id="h13" class="lightbox"><a href="#"><img src="h13.jpeg"></a></div>
+
+<a href="#h14"><img src="h14.jpeg"></a>
+<div id="h14" class="lightbox"><a href="#"><img src="h14.jpeg"></a></div>
+
+<a href="#h15"><img src="h15.jpeg"></a>
+<div id="h15" class="lightbox"><a href="#"><img src="h15.jpeg"></a></div>
+
+<a href="#h16"><img src="h16.jpeg"></a>
+<div id="h16" class="lightbox"><a href="#"><img src="h16.jpeg"></a></div>
+
+<a href="#h17"><img src="h17.jpeg"></a>
+<div id="h17" class="lightbox"><a href="#"><img src="h17.jpeg"></a></div>
+
+<a href="#h18"><img src="h18.jpeg"></a>
+<div id="h18" class="lightbox"><a href="#"><img src="h18.jpeg"></a></div>
+
+<a href="#h19"><img src="h19.jpeg"></a>
+<div id="h19" class="lightbox"><a href="#"><img src="h19.jpeg"></a></div>
+
+<a href="#h20"><img src="h20.jpeg"></a>
+<div id="h20" class="lightbox"><a href="#"><img src="h20.jpeg"></a></div>
+
+<a href="#h21"><img src="h21.jpeg"></a>
+<div id="h21" class="lightbox"><a href="#"><img src="h21.jpeg"></a></div>
+
+
+
+<!-- ================= PHOTO SAFARI ================= -->
+<div class="section-title">Photo Safari</div>
+
+<a href="#p1"><img src="p1.jpg"></a>
+<div id="p1" class="lightbox"><a href="#"><img src="p1.jpg"></a></div>
+
+<a href="#p2"><img src="p2.jpeg"></a>
+<div id="p2" class="lightbox"><a href="#"><img src="p2.jpeg"></a></div>
+
+<a href="#p3"><img src="p3.jpeg"></a>
+<div id="p3" class="lightbox"><a href="#"><img src="p3.jpeg"></a></div>
+
+<a href="#p4"><img src="p4.jpeg"></a>
+<div id="p4" class="lightbox"><a href="#"><img src="p4.jpeg"></a></div>
+
+<a href="#p5"><img src="p5.jpeg"></a>
+<div id="p5" class="lightbox"><a href="#"><img src="p5.jpeg"></a></div>
+
+<a href="#p6"><img src="p6.jpeg"></a>
+<div id="p6" class="lightbox"><a href="#"><img src="p6.jpeg"></a></div>
+
+<a href="#p7"><img src="p7.jpeg"></a>
+<div id="p7" class="lightbox"><a href="#"><img src="p7.jpeg"></a></div>
+
+<a href="#p8"><img src="p8.jpeg"></a>
+<div id="p8" class="lightbox"><a href="#"><img src="p8.jpeg"></a></div>
+
+<a href="#p9"><img src="p9.jpeg"></a>
+<div id="p9" class="lightbox"><a href="#"><img src="p9.jpeg"></a></div>
+
+<a href="#p10"><img src="p10.jpeg"></a>
+<div id="p10" class="lightbox"><a href="#"><img src="p10.jpeg"></a></div>
+
+</div>
+
+<!-- BACK -->
+<div style="text-align:center;">
+<a href="index.html" class="back-home">← Back to Home</a>
+</div>
+
+<footer>
+<p>
+&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁
+</p>
+</footer>
+
+</body>
+</html>

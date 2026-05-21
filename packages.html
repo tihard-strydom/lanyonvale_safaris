@@ -1,0 +1,331 @@
+
+<html lang="en">
+				<head>
+						<meta charset="UTF-8">
+			<title>Lanyonvale Safaris – Packages & Bookings</title>
+			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+
+		body
+		{font-family:'Georgia', serif;
+		margin:0;
+		padding:0;
+		background-color:#f5ecdf;
+		color:#2f2f2f;}
+
+		header
+		{background:linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+		color:white;
+		padding:40px 20px;
+		text-align:center;
+		position:relative;}
+
+		.sa-flag
+		{position:absolute;
+		top:20px;
+		right:20px;
+		width:50px;}
+
+		.container
+		{max-width:1100px;
+		margin:auto;
+		padding:30px 20px;}
+
+		h1
+		{color:#fff;
+		font-size:48px;
+		margin-bottom:10px;}
+
+		h2
+		{color:#5b3d28;
+		font-size:36px;
+		margin-top:50px;}
+
+		.package
+		{background-color:white;
+		border:1px solid #d6c1a5;
+		padding:25px;
+		margin-bottom:30px;
+		border-radius:12px;
+		box-shadow:2px 4px 12px rgba(0,0,0,0.08);
+		transition:0.3s ease;}
+
+		.package:hover{transform:translateY(-5px);}
+
+		.package h3
+		{margin-top:0;
+		color:#6b4a2f;
+		font-size:28px;}
+
+		.package ul{padding-left:20px;}
+
+		.package ul li
+		{margin-bottom:10px;line-height:1.7;}
+
+		.book-button
+		{display:inline-block;
+		background-color:#5b3d28;
+		color:white;
+		padding:12px 25px;
+		margin-top:20px;
+		border-radius:6px;
+		text-decoration:none;
+		font-weight:bold;
+		transition:0.3s ease;}
+
+		.book-button:hover{background-color:#7a5737;}
+
+		.back-home
+		{display:inline-block;
+		margin:40px auto 0;
+		padding:12px 20px;
+		text-align:center;
+		background-color:#8b6a45;
+		color:white;
+		border-radius:5px;
+		text-decoration:none;}
+
+		.contact-section
+		{margin-top:60px;
+		text-align:center;
+		background-color:#ede3d1;
+		padding:40px;
+		border-radius:12px;}
+
+		.contact-section p
+		{margin-bottom:10px;
+		font-size:18px;}
+
+		footer
+		{background-color:#5b3d28;
+		color:white;
+		text-align:center;
+		padding:30px 20px;
+		margin-top:60px;}
+
+		.menu-toggle
+		{font-size:30px;
+		color:white;
+		background:none;
+		border:none;
+		cursor:pointer;
+		position:fixed;
+		top:20px;
+		left:20px;
+		z-index:1000;}
+
+		.menu
+		{display:none;
+		flex-direction:column;
+		position:fixed;
+		top:60px;
+		left:0;
+		width:100%;
+		background-color:rgba(0,0,0,0.95);
+		padding:30px 0;
+		text-align:center;
+		z-index:999;}
+
+		.menu a
+		{color:white;
+		text-decoration:none;
+		padding:15px 0;
+		font-size:20px;
+		display:block;}
+
+		.menu a:hover
+		{background-color:rgba(255,255,255,0.1);}
+
+		@media(max-width:768px){
+		.package
+		{padding:20px;}
+		h1{font-size:36px;}}
+
+</style>
+	</head>
+
+<body>
+
+<!-- MENU -->
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="price_list.html">Price List</a>
+  <a href="logbook.html">Hunters Logbook</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
+</script>
+
+<!-- HEADER -->
+<header>
+
+<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag">
+
+<div>
+<img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width:140px; margin-bottom:20px;">
+<h1>Lanyonvale Safaris</h1>
+<p style="font-size:22px; font-style:italic;">
+Choose your ideal Karoo experience
+</p>
+</div>
+
+</header>
+
+<hr style="border: 4px groove #8b6a45; margin:0;">
+
+<div class="container">
+
+<h2>Exclusive Hunting Packages</h2>
+
+<!-- PACKAGE 1 -->
+<div class="package">
+
+<h3>Karoo Weekend Package</h3>
+
+<p>The perfect quick hunting getaway for families, friends, or first-time hunters wanting to experience the beauty of the Karoo.</p>
+
+<ul>
+<li>1x Springbok Ram</li>
+<li>1x Blesbok Ram</li>
+<li>2 Nights Accommodation</li>
+<li>Firewood Included</li>
+<li>Cold Room Facilities</li>
+</ul>
+
+<p><strong>Package Price: R7 500 excl. VAT</strong></p>
+
+<a class="book-button" href="mailto:francocilliers05@gmail.com?subject=Booking Enquiry – Karoo Weekend Package">
+Book Now
+</a>
+	</div>
+
+<!-- PACKAGE 2 -->
+<div class="package">
+
+<h3>The Bushveld Starter Package</h3>
+
+<p>A great all-round package for hunters wanting a quality plains game experience without going overboard.</p>
+
+<ul>
+<li>1x Gemsbok Cow</li>
+<li>1x Impala Ram</li>
+<li>1x Springbok Ram</li>
+<li>3 Nights Accommodation</li>
+</ul>
+
+<p><strong>Package Price: R13 500 excl. VAT</strong></p>
+
+<a class="book-button" href="mailto:francocilliers05@gmail.com?subject=Booking Enquiry – Bushveld Starter Package">
+Book Now
+</a>
+	</div>
+
+<!-- PACKAGE 3 -->
+<div class="package">
+
+<h3>The Kalahari Hunter Package</h3>
+
+<p>Perfect for hunters looking for that iconic Northern Cape experience with larger game and beautiful trophies.</p>
+
+<ul>
+<li>1x Gemsbok Bull</li>
+<li>1x Kudu Bull (&lt;45”)</li>
+<li>1x Springbok Ram</li>
+<li>Hunting Vehicle for 2 Days</li>
+<li>3 Nights Accommodation</li>
+</ul>
+
+<p><strong>Package Price: R22 000 excl. VAT</strong></p>
+
+<a class="book-button" href="mailto:francocilliers05@gmail.com?subject=Booking Enquiry – Kalahari Hunter Package">
+Book Now
+</a>
+	</div>
+
+<!-- PACKAGE 4 -->
+<div class="package">
+
+<h3>Friends & Family Hunting Package</h3>
+
+<p>Perfect for groups of hunters or father-and-son hunting trips. Great value for money with plenty of action in the veld.</p>
+
+<ul>
+<li>2x Springbok Rams</li>
+<li>1x Blue Wildebeest Bull</li>
+<li>1x Blesbok Ram</li>
+<li>4 Nights Accommodation</li>
+<li>Firewood & Cold Room Facilities</li>
+</ul>
+
+<p><strong>Package Price: R18 500 excl. VAT</strong></p>
+
+<a class="book-button" href="mailto:francocilliers05@gmail.com?subject=Booking Enquiry – Friends & Family Package">
+Book Now
+</a>
+	</div>
+
+<!-- PACKAGE 5 -->
+<div class="package">
+
+<h3>Trophy Karoo Experience</h3>
+
+<p>Designed for the serious trophy hunter searching for larger bulls and the complete safari experience.</p>
+
+<ul>
+<li>1x Trophy Kudu Bull (&gt;45”)</li>
+<li>1x Gemsbok Bull</li>
+<li>1x Zebra Mare</li>
+<li>4 Nights Accommodation</li>
+<li>Hunting Vehicle Included</li>
+<li>Slaughter Facilities</li>
+</ul>
+
+<p><strong>Package Price: R36 000 excl. VAT</strong></p>
+
+<a class="book-button" href="mailto:francocilliers05@gmail.com?subject=Booking Enquiry – Trophy Karoo Experience">
+Book Now
+</a>
+	</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+
+<h2>Need a Custom Hunting Package?</h2>
+
+<p>We also offer tailor-made hunting experiences for groups, families, international hunters, and special requests.</p>
+
+<p>Contact us directly for bookings and enquiries.</p>
+
+<p><strong>Franco Cilliers:</strong> +27 83 288 8106</p>
+<p><strong>Jaco Cilliers:</strong> +27 82 944 0382</p>
+<p><strong>Jaco Viviers:</strong> +27 82 511 7555</p>
+<p><strong>Email:</strong> francocilliers05@gmail.com</p>
+
+</div>
+
+<div style="text-align:center;">
+<a href="index.html" class="back-home">← Back to Home</a>
+</div>
+
+</div>
+
+<footer>
+<p>
+&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁
+</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,479 @@
+
+<html lang="en">
+				<head>
+						<meta charset="UTF-8">
+			<title>Lanyonvale Safaris</title>
+			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+
+		body 
+		{font-family: 'Georgia', serif;
+		margin: 0;
+		padding: 0;
+		background-color: #ede3d1;
+		color: #2b2118;}
+
+		header 
+		{background: linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+		color: white;
+		padding: 40px 20px;
+		text-align: center;
+		position: relative;}
+
+		.sa-flag 
+		{position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 50px;}
+
+		.container 
+		{max-width: 1200px;
+		margin: auto;
+		padding: 30px 20px;}
+
+		h1, h2 {color: #5b3d28;}
+
+		.logos 
+		{display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: 30px;}
+
+		.logos img 
+		{max-height: 160px;
+		  margin: 10px;}
+
+		.intro 
+		{text-align: center;
+		padding: 30px 20px;}
+
+		.intro p 
+		{font-size: 1.15rem;
+		line-height: 1.6;}
+
+		.safari-photo 
+		{width: 100%;
+		max-width: 900px;
+		display: block;
+		margin: 40px auto;
+		border-radius: 10px;}
+
+
+		.contact-location 
+		{display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: 40px;}
+
+		.contact, .location 
+		{flex: 1 1 45%;
+		margin: 20px;}
+
+		.contact h3, .location h3 
+		{color: #5b3d28;}
+
+		iframe 
+		{width: 100%;
+		height: 300px;
+		border: none;
+		border-radius: 8px;}
+
+		.book-button 
+		{display: block;
+		width: 220px;
+		margin: 40px auto;
+		padding: 15px;
+		background-color: #7a5737;
+		color: white;
+		font-weight: bold;
+		font-size: 1.1rem;
+		text-align: center;
+		border-radius: 8px;
+		text-decoration: none;}
+
+		.book-button:hover 
+		{background-color: #5b3d28;}
+
+		form 
+		{margin-top: 20px;}
+
+		input, textarea 
+		{width: 100%;
+		padding: 10px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #c4aa8a;
+		border-radius: 5px;
+		font-family: inherit;
+		background-color: #fffaf4;}
+
+
+		.gallery 
+		{margin-top: 60px;}
+
+		.gallery h2 
+		{text-align: center;}
+
+		.gallery-grid 
+		{display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 15px;
+		margin-top: 30px;}
+
+		.gallery-grid img 
+		{width: 100%;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 8px;
+		border: 3px solid #8b6a45;}
+
+
+		footer 
+		{background-color: #5b3d28;
+		color: white;
+		text-align: center;
+		padding: 30px 20px;
+		margin-top: 60px;}
+
+
+		@media(max-width: 768px) 
+		{.contact-location {flex-direction: column;}}
+
+/* HAMBURGER */
+
+		.menu-toggle 
+		{font-size: 30px;
+		color: white;
+		background: none;
+		border: none;
+		cursor: pointer;
+		position: fixed;
+		top: 20px;
+		left: 20px;
+		z-index: 1000;}
+
+		.menu 
+		{display: none;
+		flex-direction: column;
+		position: fixed;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		background-color: rgba(43, 33, 24, 0.96);
+		padding: 30px 0;
+		text-align: center;
+		z-index: 999;}
+
+		.menu a 
+		{color: white;
+		text-decoration: none;
+		padding: 15px 0;
+		font-size: 20px;
+		display: block;}
+
+		.menu a:hover 
+		{background-color: rgba(255, 255, 255, 0.1);}
+
+	</style>
+		</head>
+
+<body>
+
+<!-- HAMBURGER -->
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<div class="menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="price_list.html">Price List</a>
+  <a href="logbook.html">Hunters Logbook</a>
+  <a href="team.html">Meet the Team</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
+</script>
+
+<!-- HEADER -->
+
+<header style="display: flex; justify-content: space-between; align-items: center; padding: 20px; flex-wrap: wrap; text-align: center;">
+
+<div style="flex: 1;">
+    <img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width: 120px; height: auto; display: block; margin: 0 auto;">
+    <h2 style="margin-top: 10px; color: white;">LANYONVALE SAFARIS</h2>
+</div>
+
+<div style="flex: 1;">
+    <img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag" style="width: 50px; margin-top: 10px;">
+    <h2 style="color: #f5d7a1; margin-top: 20px;">
+        Experience the Untamed Spirit of the Karoo.
+    </h2>
+</div>
+
+<div style="flex: 1;">
+    <img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width: 120px; height: auto; display: block; margin: 0 auto;">
+    <h2 style="margin-top: 10px; color: white;">EST. 2025</h2>
+</div>
+
+</header>
+
+<hr style="border: 4px groove #8b6a45; margin: 0;">
+
+<!-- INTRO -->
+
+<div class="intro">
+  <h2>Welcome to Lanyonvale Safaris</h2>
+  <p>Nestled between the historic towns of Griekwastad and Prieska in the vast and untouched landscapes of the South African Karoo, Lanyonvale Safaris is a third-generation hunting farm surrounded by rugged beauty, endless horizons, and true Northern Cape hospitality.</p>
+  <p>Here, golden sunsets stretch across the open veld, wildlife roams freely, and every moment reflects the raw and peaceful spirit of Africa. Just like the land itself, Lanyonvale offers an experience that is both authentic and unforgettable.</p>
+</div>
+
+<img class="safari-photo" src="karoo.jpeg" alt="Lanyonvale Sunset">
+
+<section id="about-us" style="font-family: Arial, sans-serif; padding: 60px 20px; background-color: #f9f9f9;">
+  <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+
+    <!-- Left Column: Text -->
+    <div style="flex: 1 1 500px;">
+		<h2 style="color: #5b3d28; font-size: 36px; margin-bottom: 20px;">About Us</h2>
+		<h3 style="color: #444; font-size: 24px; margin-top: -10px; margin-bottom: 25px;">Lanyonvale Safaris</h3>
+
+		<p style="font-size: 18px; line-height: 1.8; color: #333;">
+        At Lanyonvale Safaris, we believe that a great hunt is more than just a trophy — it's about the full experience. Whether you're a seasoned hunter or visiting Africa for the first time, our team is committed to providing you with a professional, personalized, and unforgettable safari.</p>
+		<p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Set in the heart of the Karoo between Griekwastad and Prieska, our farm offers an authentic African hunting environment where ethical hunting, conservation, and respect for nature come first.</p>
+		<p style="font-size: 18px; line-height: 1.8; color: #333;">
+        From plains game hunts across open Karoo veld to peaceful evenings under star-filled skies, every experience is designed to reflect the true spirit of the Northern Cape and create lifelong memories.</p>
+		<p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Let Lanyonvale Safaris be your gateway to the African wilderness — where tradition meets excellence, and every hunt becomes a story worth telling.</p>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div style="flex: 1 1 400px;">
+      <img src="Gun.jpeg" alt="Lanyonvale Safari Experience" style="border-radius: 12px; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+    </div>
+
+  </div>
+		</section>
+
+<section id="meet-ph" style="padding: 60px 20px; background-color: #f9f9f9;">
+  <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+    
+    <!-- Left Side: Image -->
+    <div style="flex: 1 1 300px;">
+      <img src="Franco.jpeg" alt="Professional Hunter Franco Cilliers" style="border-radius: 12px; max-width: 400px; width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+    </div>
+
+    <!-- Right Side: Text -->
+    <div style="flex: 1 1 400px;">
+		<h2 style="font-size: 36px; margin-bottom: 20px; color: #5b3d28;">Meet Your PH</h2>
+		<h3 style="margin-top: -15px; font-size: 24px; color: #444;">Franco Cilliers</h3>
+      
+		<p style="font-size: 1.1rem; line-height: 1.7; color: #333;">
+        Franco Cilliers is the Professional Hunter at Lanyonvale Safaris, guiding clients through the vast and rugged Karoo landscape between Griekwastad and Prieska. With a deep respect for wildlife, ethical hunting, and the traditions of the African bush, he brings both skill and calm leadership to every safari experience.</p>
+		<p style="font-size: 1.1rem; line-height: 1.7; color: #333;">
+        Raised with a strong passion for the outdoors and hunting culture, Franco is known for his patience in the field, attention to detail, and ability to make every hunt both safe and memorable. Whether tracking plains game through open veld or sharing stories around the fire, he ensures every guest experiences the true spirit of the Northern Cape wilderness.</p>
+    </div>
+
+ </div>
+	</section>
+
+<!-- PACKAGES + PRICELIST -->
+<div style="display: flex; flex-wrap: wrap;">
+
+  <!-- PACKAGES -->
+  <section style="flex: 1; min-width: 320px; padding: 80px 20px; background-color: #e9dcc7; text-align: center; font-family: Arial, sans-serif;">
+
+    <h2 style="font-size: 36px; color: #5b3d28; margin-bottom: 20px;"> Packages & Bookings </h2>
+
+    <p style="font-size: 18px; color: #333; max-width: 700px; margin: 0 auto 40px;">
+      Explore our exclusive safari packages and book your ultimate Karoo hunting adventure today with Lanyonvale Safaris.</p>
+
+    <a href="packages.html"
+      style="background-color: #7a5737; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+      View Packages & Book Now</a>
+
+  </section>
+
+  <!-- PRICELIST -->
+  <section style="flex: 1; min-width: 320px; padding: 80px 20px; background-color: #f5ecdf; text-align: center; font-family: Arial, sans-serif;">
+
+    <h2 style="font-size: 36px; color: #6b4a2f; margin-bottom: 20px;">Price List</h2>
+
+    <p style="font-size: 18px; color: #333; max-width: 700px; margin: 0 auto 40px;">
+      View our updated rates and species pricing for your Lanyonvale Safari experience in the heart of the Karoo.</p>
+
+    <a href="price_list.html"
+      style="background-color: #5b3d28; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+      View Price List</a>
+
+  </section>
+</div>
+
+
+<!-- LOGBOOK + TEAM -->
+<div style="display: flex; flex-wrap: wrap;">
+
+  <!-- LOGBOOK -->
+  <section style="flex: 1; min-width: 320px; padding: 80px 20px; background-color: #f5ecdf; text-align: center; font-family: Arial, sans-serif;">
+
+    <h2 style="font-size: 36px; color: #6b4a2f; margin-bottom: 20px;">Hunter’s Logbook & Guest Reviews</h2>
+
+    <p style="font-size: 18px; color: #333; max-width: 750px; margin: 0 auto 40px;">
+      Read unforgettable stories and experiences shared by hunters who visited Lanyonvale Safaris.</p>
+
+    <a href="logbook.html"
+      style="background-color: #8b6a45; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+      Explore Stories</a>
+
+  </section>
+
+  <!-- TEAM -->
+  <section style="flex: 1; min-width: 320px; padding: 80px 20px; background-color: #ede3d1; text-align: center; font-family: Arial, sans-serif;">
+
+    <h2 style="font-size: 36px; color: #5b3d28; margin-bottom: 20px;">Meet the Team</h2>
+
+    <p style="font-size: 18px; color: #333; max-width: 750px; margin: 0 auto 40px;">
+      Meet the passionate people behind Lanyonvale Safaris who make every safari unforgettable in the Karoo wilderness.</p>
+
+    <a href="team.html"style="background-color: #5b3d28; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+      Meet the Team</a>
+
+  </section>
+</div>
+
+
+<!-- FAQ + GALLERY -->
+<div style="display: flex; flex-wrap: wrap;">
+
+  <!-- FAQ -->
+  <section style="flex: 1; min-width: 320px; padding: 80px 20px; background-color: #e9dcc7; text-align: center; font-family: Arial, sans-serif;">
+
+    <h2 style="font-size: 36px; color: #5b3d28; margin-bottom: 20px;">Frequently Asked Questions</h2>
+
+    <p style="font-size: 18px; color: #333; max-width: 750px; margin: 0 auto 40px;">
+      Get answers to common safari and travel questions before your Lanyonvale adventure begins.</p>
+
+    <a href="faqs.html"style="background-color: #6b4a2f; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+      View FAQs</a>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section style="flex: 1; min-width: 320px; padding: 80px 20px; background-color: #f5ecdf; text-align: center; font-family: Arial, sans-serif;">
+
+    <h2 style="font-size: 36px; color: #5b3d28; margin-bottom: 20px;">Gallery</h2>
+
+    <p style="font-size: 18px; color: #333; max-width: 750px; margin: 0 auto 40px;">
+      Explore unforgettable moments, trophies, and landscapes from Lanyonvale Safaris in the Northern Cape.</p>
+
+    <a href="gallery.html"style="background-color: #444; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px;">
+     View Gallery</a>
+
+  </section>
+</div>
+
+<div class="contact-location" style="display: flex; flex-wrap: wrap; gap: 40px; font-family: Arial, sans-serif; padding: 60px 20px; background-color: #f5f5f5;">
+
+  <!-- CONTACT LEFT -->
+  <div class="contact" style="flex: 1; min-width: 320px;">
+
+    <h3 style="font-size: 28px; color: #5b3d28; margin-bottom: 20px;">Contact Us</h3>
+
+    <p><strong>Franco Cilliers</strong><br>📞 +27 83 288 8106</p>
+    <p><strong>Jaco Cilliers</strong><br>📞 +27 82 944 0382</p>
+    <p><strong>Jaco Viviers</strong><br>📞 +27 82 511 7555</p>
+
+    <p><strong>Email:</strong><br>✉ francocilliers05@gmail.com</p>
+
+    <form action="mailto:francocilliers05@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required
+        style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px;">
+
+      <input type="email" name="email" placeholder="Your Email" required
+        style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px;">
+
+      <textarea name="message" placeholder="Your Message..." rows="5" required
+        style="width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+
+      <input type="submit" value="Send Message"
+        style="background-color:#5b3d28; color:white; border:none; padding:10px 20px; cursor:pointer; border-radius:5px;">
+    </form>
+
+  </div>
+
+  <!-- LOCATION RIGHT -->
+  <div class="location" style="flex: 1; min-width: 320px;">
+
+    <h3 style="font-size: 28px; color: #5b3d28; margin-bottom: 20px;">Where to Find Us</h3>
+
+    <p style="font-size: 18px; color: #333; margin-bottom: 15px;">
+      Farm Spioenkop<br>
+      Northern Cape 8940<br>
+      South Africa
+    </p>
+
+    <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
+      Coordinates: -29.243299, 23.094743
+    </p>
+
+    <iframe
+      src="https://www.google.com/maps?q=-29.243299,23.094743&z=15&output=embed"
+      width="100%"
+      height="400"
+      style="border:0; border-radius: 10px;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <p style="margin-top: 10px; font-size: 14px;">
+      <a href="https://maps.app.goo.gl/ASDLh1y4sikNTU6z7?g_st=iw" target="_blank" style="color:#5b3d28;">
+        Open in Google Maps
+      </a>
+    </p>
+
+  </div>
+
+</div>
+
+<!-- PHOTO GALLERY -->
+
+<div class="gallery">
+
+<h2>Safari Moments</h2>
+
+<div class="gallery-grid">
+
+<img src="gallery1.jpeg" alt="Impala">
+<img src="gallery2.jpeg" alt="Kudu">
+<img src="gallery3.jpeg" alt="Kudu Cow">
+<img src="gallery4.jpeg" alt="Franco Kudu">
+<img src="gallery5.jpeg" alt="Franco Springbuck">
+<img src="gallery6.jpeg" alt="Tihard Kudu">
+<img src="gallery7.jpeg" alt="Springbuck">
+<img src="gallery8.jpeg" alt="Oryx">
+<img src="gallery9.jpeg" alt="Franco Springbuck">
+<img src="gallery10.jpeg" alt="Springbuck">
+<img src="gallery11.jpeg" alt="Franco Kudu">
+<img src="gallery12.jpeg" alt="Franco Warthog">
+
+</div>
+</div>
+
+<footer>
+<p>
+&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁
+</p>
+</footer>
+
+</body>
+</html>
