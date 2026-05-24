@@ -3,182 +3,418 @@
 				<head>
 						<meta charset="UTF-8">
 			<title>Lanyonvale Safaris</title>
-			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="icon" type="image/jpeg" href="lanyonvale_logo2.jpeg">
 
-	<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		body 
-		{font-family: 'Georgia', serif;
-		margin: 0;
-		padding: 0;
-		background-color: #ede3d1;
-		color: #2b2118;}
+<style>
 
-		header 
-		{background: linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
-		color: white;
-		padding: 40px 20px;
-		text-align: center;
-		position: relative;}
+/* =========================
+   GENERAL
+========================= */
 
-		.sa-flag 
-		{position: absolute;
-		top: 20px;
-		right: 20px;
-		width: 50px;}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: #ede3d1;
+    color: #2b2118;
+    overflow-x: hidden;
+}
 
-		.container 
-		{max-width: 1200px;
-		margin: auto;
-		padding: 30px 20px;}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
 
-		h1, h2 {color: #5b3d28;}
+h1, h2, h3 {
+    color: #5b3d28;
+}
 
-		.logos 
-		{display: flex;
-		justify-content: space-around;
-		align-items: center;
-		flex-wrap: wrap;
-		margin-top: 30px;}
+p {
+    line-height: 1.8;
+}
 
-		.logos img 
-		{max-height: 160px;
-		  margin: 10px;}
+/* =========================
+   HEADER
+========================= */
 
-		.intro 
-		{text-align: center;
-		padding: 30px 20px;}
+.main-header {
+    background: linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
+    color: white;
 
-		.intro p 
-		{font-size: 1.15rem;
-		line-height: 1.6;}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 
-		.safari-photo 
-		{width: 100%;
-		max-width: 900px;
-		display: block;
-		margin: 40px auto;
-		border-radius: 10px;}
+    text-align: center;
 
+    padding: 30px 20px;
+    gap: 20px;
 
-		.contact-location 
-		{display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin-top: 40px;}
+    position: relative;
+}
 
-		.contact, .location 
-		{flex: 1 1 45%;
-		margin: 20px;}
+.header-section {
+    flex: 1;
+    min-width: 250px;
+}
 
-		.contact h3, .location h3 
-		{color: #5b3d28;}
+.logo {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+}
 
-		iframe 
-		{width: 100%;
-		height: 300px;
-		border: none;
-		border-radius: 8px;}
+.main-title {
+    color: #f5e3c3;
+    font-size: 60px;
+    margin-top: 10px;
+    line-height: 1.1;
+}
 
-		.book-button 
-		{display: block;
-		width: 220px;
-		margin: 40px auto;
-		padding: 15px;
-		background-color: #7a5737;
-		color: white;
-		font-weight: bold;
-		font-size: 1.1rem;
-		text-align: center;
-		border-radius: 8px;
-		text-decoration: none;}
+.tagline {
+    color: #f5e3c3;
+    font-size: 32px;
+    line-height: 1.3;
+    margin-top: 10px;
+}
 
-		.book-button:hover 
-		{background-color: #5b3d28;}
+.est {
+    color: #f5e3c3;
+    font-size: 45px;
+    margin-top: 10px;
+}
 
-		form 
-		{margin-top: 20px;}
+.sa-flag {
+    width: 55px;
+    margin-top: 15px;
+}
 
-		input, textarea 
-		{width: 100%;
-		padding: 10px;
-		margin-top: 10px;
-		margin-bottom: 20px;
-		border: 1px solid #c4aa8a;
-		border-radius: 5px;
-		font-family: inherit;
-		background-color: #fffaf4;}
+/* =========================
+   HAMBURGER MENU
+========================= */
 
+.menu-toggle {
+    font-size: 35px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
 
-		.gallery 
-		{margin-top: 60px;}
+    position: fixed;
+    top: 20px;
+    left: 20px;
 
-		.gallery h2 
-		{text-align: center;}
+    z-index: 1000;
+}
 
-		.gallery-grid 
-		{display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 15px;
-		margin-top: 30px;}
+.menu {
+    display: none;
+    flex-direction: column;
 
-		.gallery-grid img 
-		{width: 100%;
-		height: 200px;
-		object-fit: cover;
-		border-radius: 8px;
-		border: 3px solid #8b6a45;}
+    position: fixed;
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 100%;
 
-		footer 
-		{background-color: #5b3d28;
-		color: white;
-		text-align: center;
-		padding: 30px 20px;
-		margin-top: 60px;}
+    background-color: rgba(43, 33, 24, 0.97);
 
+    z-index: 999;
 
-		@media(max-width: 768px) 
-		{.contact-location {flex-direction: column;}}
+    justify-content: center;
+    align-items: center;
+}
 
-/* HAMBURGER */
+.menu a {
+    color: white;
+    text-decoration: none;
 
-		.menu-toggle 
-		{font-size: 30px;
-		color: white;
-		background: none;
-		border: none;
-		cursor: pointer;
-		position: fixed;
-		top: 20px;
-		left: 20px;
-		z-index: 1000;}
+    font-size: 24px;
 
-		.menu 
-		{display: none;
-		flex-direction: column;
-		position: fixed;
-		top: 60px;
-		left: 0;
-		width: 100%;
-		background-color: rgba(43, 33, 24, 0.96);
-		padding: 30px 0;
-		text-align: center;
-		z-index: 999;}
+    padding: 18px;
 
-		.menu a 
-		{color: white;
-		text-decoration: none;
-		padding: 15px 0;
-		font-size: 20px;
-		display: block;}
+    width: 100%;
+    text-align: center;
 
-		.menu a:hover 
-		{background-color: rgba(255, 255, 255, 0.1);}
+    transition: 0.3s;
+}
 
-	</style>
-		</head>
+.menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* =========================
+   INTRO SECTION
+========================= */
+
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.intro h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 28px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* =========================
+   SAFARI PHOTO
+========================= */
+
+.safari-photo {
+    width: 100%;
+    max-width: 950px;
+
+    display: block;
+    margin: 40px auto;
+
+    border-radius: 12px;
+
+    border: 4px solid #8b6a45;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.book-button {
+    display: block;
+
+    width: 260px;
+
+    margin: 40px auto;
+
+    padding: 18px;
+
+    background-color: #7a5737;
+    color: white;
+
+    font-weight: bold;
+    font-size: 20px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.book-button:hover {
+    background-color: #5b3d28;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    margin-top: 70px;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 45px;
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 3px solid #8b6a45;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-location {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin-top: 60px;
+
+    gap: 20px;
+}
+
+.contact,
+.location {
+    flex: 1 1 45%;
+
+    background-color: #f7efe4;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.contact h3,
+.location h3 {
+    font-size: 35px;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+
+    border: none;
+
+    border-radius: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #5b3d28;
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    margin-top: 60px;
+}
+
+/* =========================
+   MOBILE FIXES
+========================= */
+
+@media screen and (max-width: 768px) {
+
+    .main-header {
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+
+    .logo {
+        max-width: 170px;
+    }
+
+    .main-title {
+        font-size: 40px;
+    }
+
+    .tagline {
+        font-size: 24px;
+    }
+
+    .est {
+        font-size: 32px;
+    }
+
+    .intro h1 {
+        font-size: 38px;
+    }
+
+    .intro p {
+        font-size: 21px;
+        line-height: 1.7;
+    }
+
+    .gallery h2 {
+        font-size: 34px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: auto;
+    }
+
+    .contact-location {
+        flex-direction: column;
+    }
+
+    .contact,
+    .location {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .menu-toggle {
+        font-size: 32px;
+        top: 15px;
+        left: 15px;
+    }
+
+    .menu a {
+        font-size: 20px;
+    }
+
+    iframe {
+        height: 240px;
+    }
+
+    .book-button {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .sa-flag {
+        width: 40px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .tagline {
+        font-size: 20px;
+    }
+
+    .est {
+        font-size: 28px;
+    }
+
+    .intro h1 {
+        font-size: 32px;
+    }
+
+    .intro p {
+        font-size: 18px;
+    }
+
+}
+
+</style>
+</head>
 
 <body>
 
