@@ -500,9 +500,9 @@
 
             if (stored) {
                 const profile = JSON.parse(stored);
-                messageText = `Hi Oom Jaco, this is VIP Hunter ${profile.name} from ${profile.country}. I would love to request a formal booking for the [${packageName}] (${packagePrice}) at Lanyonvale Safaris. \n\nMy registered details:\n• Contact: ${profile.phone}\n• Preferred Caliber: ${profile.caliber}\n\nPlease let me know about slot availability for our party.`;
+                messageText = `Hi Jaco, this is VIP Hunter ${profile.name} from ${profile.country}. I would love to request a formal booking for the [${packageName}] (${packagePrice}) at Lanyonvale Safaris. \n\nMy registered details:\n• Contact: ${profile.phone}\n• Preferred Caliber: ${profile.caliber}\n\nPlease let me know about slot availability for our party.`;
             } else {
-                messageText = `Hi Oom Jaco, I am interested in booking the [${packageName}] (${packagePrice}) at Lanyonvale Safaris. Please let me know what dates are currently available for this seasonal block. Thank you!`;
+                messageText = `Hi Jaco, I am interested in booking the [${packageName}] (${packagePrice}) at Lanyonvale Safaris. Please let me know what dates are currently available for this seasonal block. Thank you!`;
             }
 
             const encodedURL = `https://wa.me/${targetWhatsAppNumber}?text=${encodeURIComponent(messageText)}`;
