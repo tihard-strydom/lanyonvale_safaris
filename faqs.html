@@ -1,294 +1,307 @@
+<!DOCTYPE html>
 <html lang="en">
-				<head>
-						<meta charset="UTF-8">
-			<title>Lanyonvale Safaris – FAQS</title>
-			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanyonvale Safaris | Expedition FAQs</title>
+    <link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-	<style>
+    <style>
+        :root {
+            --primary-dark: #1c1a17;
+            --accent-gold: #c5a059;
+            --bg-light: #fdfcfaf8;
+            --bg-alt: #f4f0e9;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.03);
+        }
 
-		body
-		{font-family:'Georgia', serif;
-		margin:0;
-		padding:0;
-		background-color:#f5ecdf;
-		color:#2f2f2f;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-top: 80px; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-dark); letter-spacing: 1px; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(28, 26, 23, 0.98); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .nav-logo { display: flex; align-items: center; gap: 15px; }
+        .nav-logo img { height: 55px; border-radius: 4px; }
+        .nav-logo h2 { color: var(--accent-gold); font-size: 20px; letter-spacing: 2px; text-transform: uppercase; margin: 0; font-family: 'Playfair Display', serif; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-light); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: 0.3s; padding-bottom: 5px; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); border-bottom: 1px solid var(--accent-gold); }
+        .menu-toggle { display: none; color: var(--accent-gold); font-size: 28px; background: none; border: none; cursor: pointer; }
 
-		header
-		{background:linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
-		color:white;
-		padding:40px 20px;
-		text-align:center;
-		position:relative;}
+        /* HOOF STYLREËL (Vir rekenaars) */
+.hero-header { 
+    background: linear-gradient(rgba(28, 26, 23, 0.65), rgba(28, 26, 23, 0.85)), url('karoo.jpeg') center/cover no-repeat fixed; 
+    padding: 160px 20px 120px; 
+    text-align: center; 
+    color: white; 
+    position: relative; 
+}
+.hero-header h1 { color: white; font-size: 4.5rem; letter-spacing: 4px; margin-bottom: 20px; font-weight: 400; text-transform: uppercase; }
+.hero-header p { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-gold); font-size: 1.6rem; letter-spacing: 1px; max-width: 800px; margin: 0 auto 30px; }
+.sa-flag-badge { width: 45px; margin-top: 15px; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.hero-est { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: rgba(255,255,255,0.5); margin-top: 10px; }
 
-		.sa-flag
-		{position:absolute;
-		top:20px;
-		right:20px;
-		width:50px;}
+/* MEDIA QUERY (Vir selfone en tablette) */
+@media (max-width: 900px) {
+    .hero-header {
+        /* Ons skryf die eienskappe apart uit om mobiele blaaiers te dwing om dit te verstaan */
+        background-image: linear-gradient(rgba(28, 26, 23, 0.65), rgba(28, 26, 23, 0.85)), url('karoo.jpeg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll !important; /* Hiermee skakel ons die fixed effek veilig af */
+    }
 
-		.container
-		{max-width:1100px;
-		margin:auto;
-		padding:30px 20px;}
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1c1a17; padding: 30px 0; text-align: center; gap: 20px; border-bottom: 1px solid var(--accent-gold); }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .hero-header h1 { font-size: 2.8rem; }
+    .hero-header p { font-size: 1.2rem; }
+    .contact-map-wrapper { padding: 25px; }
+}
+        /* CONTAINERS & SECTIONS */
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+        .category-title { font-size: 2.2rem; margin: 50px 0 25px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(197, 160, 89, 0.2); padding-bottom: 10px; display: flex; align-items: center; gap: 15px; }
+        .category-title::before { content: '•'; color: var(--accent-gold); }
+        
+        /* LUXURY FAQ BOXES */
+        .faq-box { background: white; border: 1px solid rgba(197, 160, 89, 0.15); padding: 35px; margin-bottom: 25px; border-radius: 4px; box-shadow: var(--card-shadow); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .faq-box::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background-color: transparent; transition: 0.3s; }
+        .faq-box:hover { transform: translateY(-4px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.05); }
+        .faq-box:hover::before { background-color: var(--accent-gold); }
+        
+        .question { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 15px; letter-spacing: 0.5px; }
+        .answer { color: #555; font-size: 1.02rem; font-weight: 300; line-height: 1.7; text-align: justify; }
 
-		h1
-		{color:#fff;
-		font-size:48px;
-		margin-bottom:10px;}
+        /* CONTACT LUXURY WRAPPER */
+        .contact-section { margin-top: 90px; text-align: center; background: #fbf9f5; border: 1px solid rgba(197, 160, 89, 0.15); padding: 60px 40px; border-radius: 4px; box-shadow: var(--card-shadow); }
+        .contact-section h2 { font-size: 2.4rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .contact-section p { color: #666; font-size: 1.05rem; margin-bottom: 35px; font-weight: 300; }
+        
+        .concierge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; margin-bottom: 35px; }
+        .concierge-card { background: white; border: 1px solid rgba(197, 160, 89, 0.1); padding: 25px; border-radius: 2px; transition: 0.3s; }
+        .concierge-card:hover { border-color: var(--accent-gold); }
+        .concierge-card h4 { font-family: 'Lato', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-gold); margin-bottom: 8px; }
+        .concierge-card p { font-size: 1.1rem; color: var(--primary-dark); font-weight: 700; margin: 0; }
+        
+        .email-display { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.3rem; color: var(--primary-dark); display: inline-block; margin-top: 15px; text-decoration: none; border-bottom: 1px dashed var(--accent-gold); padding-bottom: 3px; transition: 0.3s; }
+        .email-display:hover { color: var(--accent-gold); }
 
-		h2
-		{color:#5b3d28;
-		font-size:36px;
-		margin-top:50px;}
+        /* BUTTONS */
+        .btn-gold-center { display: inline-block; background: var(--accent-gold); color: var(--primary-dark); border: 1px solid var(--accent-gold); padding: 15px 40px; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; border-radius: 2px; text-decoration: none; transition: 0.3s ease; margin: 50px auto 20px; }
+        .btn-gold-center:hover { background: transparent; color: var(--accent-gold); }
 
-		.faq-box 
-		{background-color: white;
-		border: 1px solid #d6c1a5;
-		padding: 20px;
-		margin-bottom: 20px;
-		border-radius: 12px;
-		box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
-		transition: 0.3s ease;}
+        /* FLOATING WHATSAPP CONCIERGE */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #1c1a17; border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 15px 25px; border-radius: 50px; display: flex; align-items: center; gap: 12px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+        .whatsapp-float:hover { background-color: var(--accent-gold); color: var(--primary-dark); transform: scale(1.05); }
 
-		.faq-box:hover 
-		{transform: translateY(-4px);}
+        /* FOOTER */
+        footer { background-color: #11100e; color: #777; text-align: center; padding: 70px 20px; font-size: 0.9rem; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 100px; }
+        footer h2 { color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 4px; margin-bottom: 12px; font-weight: 400; text-transform: uppercase; }
+        footer span { color: var(--accent-gold); }
 
-		.question 
-		{font-weight: bold;
-		color: #2f4f2f;
-		margin-bottom: 10px;}
-
-		.answer 
-		{line-height: 1.6; color: #333;}
-
-		.back-home
-		{display:inline-block;
-		margin:40px auto 0;
-		padding:12px 20px;
-		text-align:center;
-		background-color:#8b6a45;
-		color:white;
-		border-radius:5px;
-		text-decoration:none;}
-
-		.contact-section
-		{margin-top:60px;
-		text-align:center;
-		background-color:#ede3d1;
-		padding:40px;
-		border-radius:12px;}
-
-		.contact-section p
-		{margin-bottom:10px;
-		font-size:18px;}
-
-		footer
-		{background-color:#5b3d28;
-		color:white;
-		text-align:center;
-		padding:30px 20px;
-		margin-top:60px;}
-
-		.menu-toggle
-		{font-size:30px;
-		color:white;
-		background:none;
-		border:none;
-		cursor:pointer;
-		position:fixed;
-		top:20px;
-		left:20px;
-		z-index:1000;}
-
-		.menu
-		{display:none;
-		flex-direction:column;
-		position:fixed;
-		top:60px;
-		left:0;
-		width:100%;
-		background-color:rgba(0,0,0,0.95);
-		padding:30px 0;
-		text-align:center;
-		z-index:999;}
-
-		.menu a
-		{color:white;
-		text-decoration:none;
-		padding:15px 0;
-		font-size:20px;
-		display:block;}
-
-		.menu a:hover
-		{background-color:rgba(255,255,255,0.1);}
-
-		@media(max-width:768px){
-		.package
-		{padding:20px;}
-		h1{font-size:36px;}}
-
-</style>
-	</head>
-
+        @media (max-width: 900px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1c1a17; padding: 30px 0; text-align: center; gap: 20px; border-bottom: 1px solid var(--accent-gold); }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero-header h1 { font-size: 2.8rem; }
+            .hero-header p { font-size: 1.2rem; }
+            .faq-box { padding: 25px; }
+            .category-title { font-size: 1.7rem; }
+        }
+    </style>
+</head>
 <body>
 
-<!-- MENU -->
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="lanyonvale_logo 2.jpeg" alt="Lanyonvale Logo">
+            <h2>Lanyonvale</h2>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="price_list.html">Price List</a>
+            <a href="logbook.html">Hunters Logbook</a>
+            <a href="team.html">Meet the Team</a>
+            <a href="faqs.html" class="active">FAQs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-<div class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="packages.html">Packages</a>
-  <a href="price_list.html">Price List</a>
-  <a href="logbook.html">Hunters Logbook</a>
-  <a href="team.html">Meet the Team</a>
-  <a href="faqs.html">FAQs</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</div>
+    <!-- HERO HEADER -->
+    <header class="hero-header">
+        <p>Lanyonvale Safaris</p>
+        <h1>Expedition Blueprint</h1>
+        <p>Critical Travel Insights, Hunting Regulations, and Lodge Directives for Global Patrons</p>
+        <img class="sa-flag-badge" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South Africa">
+    </header>
 
-<script>
-  function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
-</script>
+    <!-- FAQ MAIN CONTAINER -->
+    <div class="container">
 
-<!-- HEADER -->
-<header>
+        <!-- CATEGORY: GENERAL TRAVEL -->
+        <h2 class="category-title">General Travel Questions</h2>
 
-<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag">
+        <div class="faq-box">
+            <div class="question">Where is Lanyonvale Safaris located?</div>
+            <div class="answer">
+                Lanyonvale Safaris is located on Farm Spioenkop in the Northern Cape, South Africa. It is a true Karoo hunting destination with open plains, big skies, and authentic African wilderness.
+            </div>
+        </div>
 
-<div>
-<img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width:140px; margin-bottom:20px;">
-<h1>Lanyonvale Safaris</h1>
-<p style="font-size:22px; font-style:italic;">
-Frequently Asked Questions
-</p>
-</div>
+        <div class="faq-box">
+            <div class="question">Do I need a visa to visit South Africa?</div>
+            <div class="answer">
+                Most international guests, including U.S. citizens, do not require a visa for stays under 90 days. A valid passport with at least two blank pages is required.
+            </div>
+        </div>
 
-</header>
+        <div class="faq-box">
+            <div class="question">Is airport transfer available?</div>
+            <div class="answer">
+                Yes, we can arrange transfers from nearby airports such as Upington or Kimberley upon request.
+            </div>
+        </div>
 
-<hr style="border:4px groove #8b6a45; margin:0;">
 
-<div class="container">
+        <!-- CATEGORY: HUNTING & SAFARI -->
+        <h2 class="category-title">Hunting & Safari Questions</h2>
 
-<h2>General Travel Questions</h2>
+        <div class="faq-box">
+            <div class="question">Can I bring my own rifle?</div>
+            <div class="answer">
+                Yes. We assist with the SAPS 520 temporary firearm import permit process and guide you step-by-step before arrival.
+            </div>
+        </div>
 
-<div class="faq-box">
-<div class="question">Where is Lanyonvale Safaris located?</div>
-<div class="answer">
-Lanyonvale Safaris is located on Farm Spioenkop in the Northern Cape, South Africa. It is a true Karoo hunting destination with open plains, big skies, and authentic African wilderness.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">What animals can I hunt?</div>
+            <div class="answer">
+                We offer a wide range of Karoo plains game including kudu, gemsbok, springbok, blesbok, impala, wildebeest, zebra, and more.
+            </div>
+        </div>
 
-<div class="faq-box">
-<div class="question">Do I need a visa to visit South Africa?</div>
-<div class="answer">
-Most international guests, including U.S. citizens, do not require a visa for stays under 90 days. A valid passport with at least two blank pages is required.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">Do I need hunting experience?</div>
+            <div class="answer">
+                No experience is required. Our professional hunters guide beginners and experienced hunters alike with full safety and ethical standards.
+            </div>
+        </div>
 
-<div class="faq-box">
-<div class="question">Is airport transfer available?</div>
-<div class="answer">
-Yes, we can arrange transfers from nearby airports such as Upington or Kimberley upon request.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">Is this a fair-chase hunting environment?</div>
+            <div class="answer">
+                Yes. All hunts are conducted ethically in a natural, free-range environment with respect for wildlife and conservation principles.
+            </div>
+        </div>
 
-<h2>Hunting & Safari Questions</h2>
 
-<div class="faq-box">
-<div class="question">Can I bring my own rifle?</div>
-<div class="answer">
-Yes. We assist with the SAPS 520 temporary firearm import permit process and guide you step-by-step before arrival.
-</div>
-</div>
+        <!-- CATEGORY: LODGE & ACCOMMODATION -->
+        <h2 class="category-title">Lodge & Accommodation</h2>
 
-<div class="faq-box">
-<div class="question">What animals can I hunt?</div>
-<div class="answer">
-We offer a wide range of Karoo plains game including kudu, gemsbok, springbok, blesbok, impala, wildebeest, zebra, and more.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">What is included in the safari package?</div>
+            <div class="answer">
+                Accommodation, meals, soft drinks, hunting vehicle during activities, professional guiding, and basic lodge services are included unless otherwise stated.
+            </div>
+        </div>
 
-<div class="faq-box">
-<div class="question">Do I need hunting experience?</div>
-<div class="answer">
-No experience is required. Our professional hunters guide beginners and experienced hunters alike with full safety and ethical standards.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">Can non-hunters join the trip?</div>
+            <div class="answer">
+                Yes. We welcome family members, photographers, and observers who want to enjoy the Karoo experience.
+            </div>
+        </div>
 
-<div class="faq-box">
-<div class="question">Is this a fair-chase hunting environment?</div>
-<div class="answer">
-Yes. All hunts are conducted ethically in a natural, free-range environment with respect for wildlife and conservation principles.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">Is WiFi available at the lodge?</div>
+            <div class="answer">
+                Yes, WiFi is available at the lodge area. However, we encourage guests to enjoy the peaceful Karoo environment and disconnect when possible.
+            </div>
+        </div>
 
-<h2>Lodge & Accommodation</h2>
 
-<div class="faq-box">
-<div class="question">What is included in the safari package?</div>
-<div class="answer">
-Accommodation, meals, soft drinks, hunting vehicle during activities, professional guiding, and basic lodge services are included unless otherwise stated.
-</div>
-</div>
+        <!-- CATEGORY: BOOKING & PAYMENTS -->
+        <h2 class="category-title">Booking & Payments</h2>
 
-<div class="faq-box">
-<div class="question">Can non-hunters join the trip?</div>
-<div class="answer">
-Yes. We welcome family members, photographers, and observers who want to enjoy the Karoo experience.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">Do I need to pay a deposit?</div>
+            <div class="answer">
+                Yes, a deposit is required to confirm your booking. The remaining balance is payable before or upon arrival.
+            </div>
+        </div>
 
-<div class="faq-box">
-<div class="question">Is WiFi available at the lodge?</div>
-<div class="answer">
-Yes, WiFi is available at the lodge area. However, we encourage guests to enjoy the peaceful Karoo environment and disconnect when possible.
-</div>
-</div>
+        <div class="faq-box">
+            <div class="question">Can prices change?</div>
+            <div class="answer">
+                Prices may vary depending on season and availability, but confirmed bookings remain locked at the agreed rate.
+            </div>
+        </div>
 
-<h2>Booking & Payments</h2>
 
-<div class="faq-box">
-<div class="question">Do I need to pay a deposit?</div>
-<div class="answer">
-Yes, a deposit is required to confirm your booking. The remaining balance is payable before or upon arrival.
-</div>
-</div>
+        <!-- CONCIERGE & CONTACT SECTION -->
+        <section class="contact-section">
+            <h2>Direct Concierge Desks</h2>
+            <p>For custom itineraries, seasonal bookings, and tailored billing requests.</p>
+            
+            <div class="concierge-grid">
+                <div class="concierge-card">
+                    <h4>Franco Cilliers</h4>
+                    <p>+27 83 288 8106</p>
+                </div>
+                <div class="concierge-card">
+                    <h4>Jaco Cilliers</h4>
+                    <p>+27 82 944 0382</p>
+                </div>
+                <div class="concierge-card">
+                    <h4>Jaco Viviers</h4>
+                    <p>+27 82 511 7555</p>
+                </div>
+            </div>
 
-<div class="faq-box">
-<div class="question">Can prices change?</div>
-<div class="answer">
-Prices may vary depending on season and availability, but confirmed bookings remain locked at the agreed rate.
-</div>
-</div>
+            <a href="mailto:francocilliers05@gmail.com" class="email-display">bookings@lanyonvalesafaris.co.za</a>
+        </section>
 
-</div>
 
-<!-- CONTACT -->
-<div class="contact-section">
+        <!-- RETURN TO NAVIGATION -->
+        <div style="text-align:center;">
+            <a href="index.html" class="btn-gold-center">← Back to Home</a>
+        </div>
 
-<h2>Contact Us</h2>
+    </div>
 
-<p>For bookings and enquiries, contact our team:</p>
+    <!-- WHATSAPP FLOATING CONCIERGE -->
+    <a href="https://wa.me/27832888106?text=Hi%20Franco,%20I%20have%20read%20the%20FAQs%20and%20would%20like%20to%20enquire%20about%20a%20safari." class="whatsapp-float" target="_blank">
+        <span>💬</span> WhatsApp Concierge
+    </a>
 
-<p><strong>Franco Cilliers:</strong> +27 83 288 8106</p>
-<p><strong>Jaco Cilliers:</strong> +27 82 944 0382</p>
-<p><strong>Jaco Viviers:</strong> +27 82 511 7555</p>
-<p><strong>Email:</strong> bookings@lanyonvalesafaris.co.za</p>
+    <!-- FOOTER -->
+    <footer>
+        <img src="lanyonvale_logo 2.jpeg" alt="Lanyonvale Logo" style="height: 65px; margin-bottom: 25px; opacity: 0.6; border-radius: 4px; border: 1px solid var(--accent-gold);">
+        <h2>LANYONVALE SAFARIS</h2>
+        <p>Est. 2025 • Experience the Deep Luxury of the Great Karoo</p>
+        <p style="margin-top: 35px; font-size: 0.78rem; color: #444; letter-spacing: 1px;">
+            © 2026 Lanyonvale Safaris. Handcrafted with absolute precision. | Patron: <span>Tihard Strydom 😁</span>
+        </p>
+    </footer>
 
-</div>
-
-<div style="text-align:center;">
-<a href="index.html" class="back-home">← Back to Home</a>
-</div>
-
-<footer>
-<p>
-&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁
-</p>
-</footer>
+    <!-- RESPONSIVE NAVBAR SCRIPT -->
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>

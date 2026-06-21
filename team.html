@@ -1,221 +1,265 @@
+<!DOCTYPE html>
 <html lang="en">
-				<head>
-						<meta charset="UTF-8">
-			<title>Lanyonvale Safaris – Meet the Team</title>
-			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanyonvale Safaris | Meet the Team</title>
+    <link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-	<style>
+    <style>
+        :root {
+            --primary-dark: #1c1a17;
+            --accent-gold: #c5a059;
+            --bg-light: #fdfcfaf8;
+            --bg-alt: #f4f0e9;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            --gold-border: rgba(197, 160, 89, 0.2);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-top: 80px; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-dark); letter-spacing: 1px; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(28, 26, 23, 0.98); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .nav-logo { display: flex; align-items: center; gap: 15px; }
+        .nav-logo img { height: 55px; border-radius: 4px; }
+        .nav-logo h2 { color: var(--accent-gold); font-size: 20px; letter-spacing: 2px; text-transform: uppercase; margin: 0; font-family: 'Playfair Display', serif; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-light); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: 0.3s; padding-bottom: 5px; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); border-bottom: 1px solid var(--accent-gold); }
+        .menu-toggle { display: none; color: var(--accent-gold); font-size: 28px; background: none; border: none; cursor: pointer; }
 
-		body
-		{font-family:'Georgia', serif;
-		margin:0;
-		padding:0;
-		background-color:#f5ecdf;
-		color:#2f2f2f;}
+        /* HOOF STYLREËL (Vir rekenaars) */
+.hero-header { 
+    background: linear-gradient(rgba(28, 26, 23, 0.65), rgba(28, 26, 23, 0.85)), url('karoo.jpeg') center/cover no-repeat fixed; 
+    padding: 160px 20px 120px; 
+    text-align: center; 
+    color: white; 
+    position: relative; 
+}
+.hero-header h1 { color: white; font-size: 4.5rem; letter-spacing: 4px; margin-bottom: 20px; font-weight: 400; text-transform: uppercase; }
+.hero-header p { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-gold); font-size: 1.6rem; letter-spacing: 1px; max-width: 800px; margin: 0 auto 30px; }
+.sa-flag-badge { width: 45px; margin-top: 15px; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.hero-est { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: rgba(255,255,255,0.5); margin-top: 10px; }
 
-		header
-		{background:linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28); 
-		color:white;
-		padding:40px 20px;
-		text-align:center;
-		position:relative;}
+/* MEDIA QUERY (Vir selfone en tablette) */
+@media (max-width: 900px) {
+    .hero-header {
+        /* Ons skryf die eienskappe apart uit om mobiele blaaiers te dwing om dit te verstaan */
+        background-image: linear-gradient(rgba(28, 26, 23, 0.65), rgba(28, 26, 23, 0.85)), url('karoo.jpeg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll !important; /* Hiermee skakel ons die fixed effek veilig af */
+    }
 
-		.sa-flag
-		{position:absolute;
-		top:20px;
-		right:20px;
-		width:50px;}
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1c1a17; padding: 30px 0; text-align: center; gap: 20px; border-bottom: 1px solid var(--accent-gold); }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .hero-header h1 { font-size: 2.8rem; }
+    .hero-header p { font-size: 1.2rem; }
+    .contact-map-wrapper { padding: 25px; }
+}
+        /* CONTAINERS & SECTIONS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
+        .section-subtitle { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 60px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 1px; background-color: var(--accent-gold); margin: 20px auto 0; }
 
-		.container
-		{max-width:1100px;
-		margin:auto;
-		padding:30px 20px;}
+        /* LUXURY TEAM GRID */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-bottom: 80px; }
+        .team-card { background: white; border: 1px solid var(--gold-border); border-radius: 4px; overflow: hidden; box-shadow: var(--card-shadow); transition: all 0.4s ease; text-align: center; padding-bottom: 30px; }
+        .team-card:hover { transform: translateY(-8px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.08); }
+        
+        .team-img-wrapper { width: 100%; height: 380px; overflow: hidden; position: relative; border-bottom: 1px solid var(--gold-border); background-color: var(--bg-alt); }
+        .team-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .team-card:hover .team-img-wrapper img { transform: scale(1.04); }
+        
+        .team-info { padding: 25px 20px 10px; }
+        .team-info h3 { font-size: 1.6rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 6px; }
+        .team-role { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-gold); font-size: 1.1rem; letter-spacing: 0.5px; }
+        
+        /* DIRECT CONCIERGE / CONTACT SECTION */
+        .concierge-card { background: #1c1a17; border: 1px solid var(--accent-gold); border-radius: 4px; padding: 50px; color: white; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.15); margin-top: 40px; }
+        .concierge-card h3 { color: var(--accent-gold); font-size: 2.2rem; margin-bottom: 15px; font-weight: 400; }
+        .concierge-card p { color: #ccc; max-width: 700px; margin: 0 auto 30px; font-weight: 300; }
+        .contacts-wrapper { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 35px; }
+        .contact-item { font-size: 16px; letter-spacing: 0.5px; }
+        .contact-item strong { color: var(--accent-gold); font-family: 'Playfair Display', serif; font-size: 18px; display: block; margin-bottom: 5px; }
+        .vat-notice { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); display: block; margin-top: 25px; }
 
-		h1
-		{color:#fff;
-		font-size:48px;
-		margin-bottom:10px;}
+        /* BUTTONS */
+        .btn-gold { display: inline-block; background: var(--accent-gold); color: var(--primary-dark); border: 1px solid var(--accent-gold); padding: 16px 40px; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; border-radius: 2px; text-decoration: none; cursor: pointer; transition: 0.3s ease; }
+        .btn-gold:hover { background: transparent; color: var(--accent-gold); }
+        
+        .btn-back { display: inline-block; margin-top: 40px; color: var(--primary-dark); text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; transition: 0.3s; padding-bottom: 5px; border-bottom: 1px solid transparent; }
+        .btn-back:hover { color: var(--accent-gold); border-bottom-color: var(--accent-gold); }
 
-		h2
-		{color:#5b3d28;
-		font-size:36px;
-		margin-top:50px;}
+        /* FLOATING WHATSAPP */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #1c1a17; border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 15px 25px; border-radius: 50px; display: flex; align-items: center; gap: 12px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+        .whatsapp-float:hover { background-color: var(--accent-gold); color: var(--primary-dark); transform: scale(1.05); }
 
-		.team-container 
-		{display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		padding: 40px 20px;
-		max-width: 1100px;
-		margin: auto;}
+        /* FOOTER */
+        footer { background-color: #11100e; color: #777; text-align: center; padding: 70px 20px; font-size: 0.9rem; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 80px; }
+        footer h2 { color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 4px; margin-bottom: 12px; font-weight: 400; }
+        footer span { color: var(--accent-gold); }
 
-		.team-member 
-		{background-color: white;
-		margin: 15px;
-		border-radius: 12px;
-		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-		max-width: 260px;
-		text-align: center;
-		padding: 20px;
-		transition: 0.3s ease;}
-
-		.team-member:hover 
-		{transform: translateY(-5px);}
-
-		.team-member img 
-		{width: 100%; border-radius: 12px;}
-
-		.back-home
-		{display:inline-block;
-		margin:40px auto 0;
-		padding:12px 20px;
-		text-align:center;
-		background-color:#8b6a45;
-		color:white;
-		border-radius:5px;
-		text-decoration:none;}
-
-		.contact-section
-		{margin-top:60px;
-		text-align:center;
-		background-color:#ede3d1;
-		padding:40px;
-		border-radius:12px;}
-
-		.contact-section p
-		{margin-bottom:10px;
-		font-size:18px;}
-
-		footer
-		{background-color:#5b3d28;
-		color:white;
-		text-align:center;
-		padding:30px 20px;
-		margin-top:60px;}
-
-		.menu-toggle
-		{font-size:30px;
-		color:white;
-		background:none;
-		border:none;
-		cursor:pointer;
-		position:fixed;
-		top:20px;
-		left:20px;
-		z-index:1000;}
-
-		.menu
-		{display:none;
-		flex-direction:column;
-		position:fixed;
-		top:60px;
-		left:0;
-		width:100%;
-		background-color:rgba(0,0,0,0.95);
-		padding:30px 0;
-		text-align:center;
-		z-index:999;}
-
-		.menu a
-		{color:white;
-		text-decoration:none;
-		padding:15px 0;
-		font-size:20px;
-		display:block;}
-
-		.menu a:hover
-		{background-color:rgba(255,255,255,0.1);}
-
-		@media(max-width:768px){
-		.package
-		{padding:20px;}
-		h1{font-size:36px;}}
-
-</style>
-	</head>
-
+        @media (max-width: 900px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1c1a17; padding: 30px 0; text-align: center; gap: 20px; border-bottom: 1px solid var(--accent-gold); }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero-header h1 { font-size: 2.8rem; }
+            .hero-header p { font-size: 1.2rem; }
+            .team-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto 50px; }
+            .contacts-wrapper { flex-direction: column; gap: 20px; }
+            .concierge-card { padding: 35px 20px; }
+        }
+    </style>
+</head>
 <body>
 
-<!-- MENU -->
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <!-- LUXURY NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="lanyonvale_logo 2.jpeg" alt="Lanyonvale Logo">
+            <h2>Lanyonvale</h2>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="price_list.html">Price List</a>
+            <a href="logbook.html">Hunters Logbook</a>
+            <a href="team.html" class="active">Meet the Team</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-<div class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="packages.html">Packages</a>
-  <a href="price_list.html">Price List</a>
-  <a href="logbook.html">Hunters Logbook</a>
-  <a href="team.html">Meet the Team</a>
-  <a href="faqs.html">FAQs</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</div>
+    <!-- EXPEDITION HERO HEADER -->
+    <header class="hero-header">
+        <p>Lanyonvale Safaris</p>
+        <h1>The Pioneers</h1>
+        <p>Meet the Dedicated Trackers, Outfitters, and Custodians Behind Your Elite African Venture</p>
+        <img class="sa-flag-badge" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South Africa">
+    </header>
 
-<script>
-  function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
-</script>
+    <div class="container">
 
-<!-- HEADER -->
-<header>
+        <h2 class="section-title">The Sanctuary Guardians</h2>
+        <p class="section-subtitle">A heritage built on absolute tracking precision, preservation, and bespoke hospitality</p>
 
-<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag">
+        <!-- LUXURY TEAM GRID -->
+        <div class="team-grid">
+            
+            <!-- FRANCO CILLIERS -->
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="Franco.jpeg" alt="Franco Cilliers">
+                </div>
+                <div class="team-info">
+                    <h3>Franco Cilliers</h3>
+                    <span class="team-role">Professional Hunter (PH) & Field Guide</span>
+                </div>
+            </div>
 
-<div>
-<img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width:140px; margin-bottom:20px;">
-<h1>Lanyonvale Safaris</h1>
-<p style="font-size:22px; font-style:italic;">
-Meet the Team Behind the Experience
-</p>
-</div>
+            <!-- JACO CILLIERS -->
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="jaco_cilliers.jpg" alt="Jaco Cilliers">
+                </div>
+                <div class="team-info">
+                    <h3>Jaco Cilliers</h3>
+                    <span class="team-role">Owner & Hunting Support</span>
+                </div>
+            </div>
 
-</header>
-<hr style="border:4px groove #8b6a45; margin:0;">
+            <!-- JACO VIVIERS -->
+            <div class="team-card">
+                <div class="team-img-wrapper">
+                    <img src="jaco_viviers.jpg" alt="Jaco Viviers">
+                </div>
+                <div class="team-info">
+                    <h3>Jaco Viviers</h3>
+                    <span class="team-role">Owner & Hunting Support</span>
+                </div>
+            </div>
 
-<div class="team-container">
+        </div>
 
-  <div class="team-member">
-    <img src="Franco.jpeg" alt="Franco Cilliers">
-    <h3>Franco Cilliers</h3>
-    <p>Professional Hunter (PH) & Field Guide</p>
-  </div>
+        <!-- CONCIERGE DIRECT COMMUNICATIONS BOX -->
+        <div class="concierge-card">
+            <h3>Direct Management Desk</h3>
+            <p>Connect instantly with our operational team to secure exclusive seasonal dates, customized corporate allocations, or private luxury camp requests.</p>
+            
+            <div class="contacts-wrapper">
+                <div class="contact-item">
+                    <strong>Franco Cilliers</strong>
+                    +27 83 288 8106
+                </div>
+                <div class="contact-item">
+                    <strong>Jaco Cilliers</strong>
+                    +27 82 944 0382
+                </div>
+                <div class="contact-item">
+                    <strong>Jaco Viviers</strong>
+                    +27 82 511 7555
+                </div>
+            </div>
 
-  <div class="team-member">
-    <img src="jaco_cilliers.jpg" alt="Jaco Cilliers">
-    <h3>Jaco Cilliers</h3>
-    <p>Owner & Hunting Support</p>
-  </div>
+            <a class="btn-gold" href="mailto:francocilliers05@gmail.com?subject=Lanyonvale Safari Bespoke Consultation">
+                Transmit Secure Email Inquiry
+            </a>
 
-  <div class="team-member">
-    <img src="jaco_viviers.jpg" alt="Jaco Viviers">
-    <h3>Jaco Viviers</h3>
-    <p>Owner & Hunting Support</p>
-  </div>
+            <span class="vat-notice">Direct Email: francocilliers05@gmail.com • Spioenkop Ground Station</span>
+        </div>
 
-</div>
+        <!-- BACK LINK -->
+        <div style="text-align: center;">
+            <a href="index.html" class="btn-back">← Back to Main Sanctuary</a>
+        </div>
 
-<div class="contact-section">
+    </div>
 
-<h2>Contact Us</h2>
+    <!-- FLOATING WHATSAPP CONCIERGE -->
+    <a href="https://wa.me/27832888106?text=Hi%20Franco,%20I%20am%20interested%20in%20arranging%20a%20luxury%20safari%20expedition." class="whatsapp-float" id="dynamic-whatsapp" target="_blank">
+        <span>💬</span> WhatsApp Concierge
+    </a>
 
-<p>For bookings, enquiries or custom safari packages contact us directly:</p>
+    <!-- LUXURY FOOTER -->
+    <footer>
+        <img src="lanyonvale_logo 2.jpeg" alt="Lanyonvale Logo" style="height: 65px; margin-bottom: 25px; opacity: 0.6; border-radius: 4px; border: 1px solid var(--accent-gold);">
+        <h2>LANYONVALE SAFARIS</h2>
+        <p>Est. 2025 • Experience the Deep Luxury of the Great Karoo</p>
+        <p style="margin-top: 35px; font-size: 0.78rem; color: #444; letter-spacing: 1px;">
+            © 2026 Lanyonvale Safaris. Handcrafted with absolute precision. | Patron: <span>Tihard Strydom</span>
+        </p>
+    </footer>
 
-<p><strong>Franco Cilliers:</strong> +27 83 288 8106</p>
-<p><strong>Jaco Cilliers:</strong> +27 82 944 0382</p>
-<p><strong>Jaco Viviers:</strong> +27 82 511 7555</p>
-<p><strong>Email:</strong> francocilliers05@gmail.com</p>
+    <!-- NAVIGATION SCRIPT -->
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("nav-links");
+            nav.classList.toggle("active");
+        }
 
-</div>
-
-<div style="text-align:center;">
-<a href="index.html" class="back-home">← Back to Home</a>
-</div>
-
-<footer>
-<p>&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁</p>
-</footer>
-
+        // AUTO-LOAD LOCALSTORAGE PERSONALIZATION IF ACTIVE
+        window.onload = function() {
+            const stored = localStorage.getItem('lanyonvale_vip_profile');
+            if(stored) {
+                const profile = JSON.parse(stored);
+                const baseText = `Hi Franco, this is VIP Guest ${profile.name} from ${profile.country}. I've just reviewed the Lanyonvale Team profiles and would like to arrange a hunt. (Caliber: ${profile.caliber}).`;
+                document.getElementById('dynamic-whatsapp').href = `https://wa.me/27832888106?text=${encodeURIComponent(baseText)}`;
+            }
+        };
+    </script>
+    
 </body>
 </html>

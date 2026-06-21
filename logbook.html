@@ -1,246 +1,239 @@
+<!DOCTYPE html>
 <html lang="en">
-				<head>
-						<meta charset="UTF-8">
-			<title>Lanyonvale Safaris – Hunters’ Logbook & Reviews</title>
-			<link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanyonvale Safaris | Hunters’ Logbook & Chronicles</title>
+    <link rel="icon" type="image/jpeg" href="lanyonvale_logo 2.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-	<style>
+    <style>
+        :root {
+            --primary-dark: #1c1a17;
+            --accent-gold: #c5a059;
+            --bg-light: #fdfcfaf8;
+            --bg-alt: #f4f0e9;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.03);
+        }
 
-		body
-		{font-family:'Georgia', serif;
-		margin:0;
-		padding:0;
-		background-color:#f5ecdf;
-		color:#2f2f2f;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; padding-top: 80px; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-dark); letter-spacing: 1px; }
+        
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(28, 26, 23, 0.98); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(197, 160, 89, 0.2); }
+        .nav-logo { display: flex; align-items: center; gap: 15px; }
+        .nav-logo img { height: 55px; border-radius: 4px; }
+        .nav-logo h2 { color: var(--accent-gold); font-size: 20px; letter-spacing: 2px; text-transform: uppercase; margin: 0; font-family: 'Playfair Display', serif; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--text-light); font-size: 13px; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; transition: 0.3s; padding-bottom: 5px; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); border-bottom: 1px solid var(--accent-gold); }
+        .menu-toggle { display: none; color: var(--accent-gold); font-size: 28px; background: none; border: none; cursor: pointer; }
 
-		header
-		{background:linear-gradient(to right, #6b4a2f, #8b6a45, #5b3d28);
-		color:white;
-		padding:40px 20px;
-		text-align:center;
-		position:relative;}
+        /* HOOF STYLREËL (Vir rekenaars) */
+.hero-header { 
+    background: linear-gradient(rgba(28, 26, 23, 0.65), rgba(28, 26, 23, 0.85)), url('karoo.jpeg') center/cover no-repeat fixed; 
+    padding: 160px 20px 120px; 
+    text-align: center; 
+    color: white; 
+    position: relative; 
+}
+.hero-header h1 { color: white; font-size: 4.5rem; letter-spacing: 4px; margin-bottom: 20px; font-weight: 400; text-transform: uppercase; }
+.hero-header p { font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-gold); font-size: 1.6rem; letter-spacing: 1px; max-width: 800px; margin: 0 auto 30px; }
+.sa-flag-badge { width: 45px; margin-top: 15px; border-radius: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.hero-est { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; color: rgba(255,255,255,0.5); margin-top: 10px; }
 
-		.sa-flag
-		{position:absolute;
-		top:20px;
-		right:20px;
-		width:50px;}
+/* MEDIA QUERY (Vir selfone en tablette) */
+@media (max-width: 900px) {
+    .hero-header {
+        /* Ons skryf die eienskappe apart uit om mobiele blaaiers te dwing om dit te verstaan */
+        background-image: linear-gradient(rgba(28, 26, 23, 0.65), rgba(28, 26, 23, 0.85)), url('karoo.jpeg');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll !important; /* Hiermee skakel ons die fixed effek veilig af */
+    }
 
-		.container
-		{max-width:1100px;
-		margin:auto;
-		padding:30px 20px;}
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1c1a17; padding: 30px 0; text-align: center; gap: 20px; border-bottom: 1px solid var(--accent-gold); }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .hero-header h1 { font-size: 2.8rem; }
+    .hero-header p { font-size: 1.2rem; }
+    .contact-map-wrapper { padding: 25px; }
+}
+        /* CONTAINERS & SECTIONS */
+        .container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
+        .section-subtitle { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 60px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 1px; background-color: var(--accent-gold); margin: 20px auto 0; }
 
-		h1
-		{color:#fff;
-		font-size:48px;
-		margin-bottom:10px;}
+        /* EDITORIAL LOGBOOK COMPONENT */
+        .split-section { display: flex; align-items: center; gap: 60px; margin-bottom: 120px; flex-wrap: wrap; }
+        .split-text { flex: 1 1 500px; }
+        .split-text h3 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 5px; font-weight: 400; }
+        .entry-location { font-family: 'Lato', sans-serif; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; color: var(--accent-gold); font-weight: 700; margin-bottom: 25px; }
+        .logbook-quote { font-family: 'Playfair Display', serif; font-style: italic; color: #444; font-size: 1.25rem; line-height: 1.7; margin-bottom: 20px; text-align: justify; border-left: 3px solid var(--accent-gold); padding-left: 20px; }
+        .split-image { flex: 1 1 400px; position: relative; }
+        .split-image img { width: 100%; border-radius: 4px; border: 1px solid rgba(197, 160, 89, 0.2); box-shadow: 0 20px 45px rgba(0,0,0,0.08); transition: 0.4s; }
+        .split-image:hover img { transform: scale(1.02); border-color: var(--accent-gold); }
 
-		h2
-		{color:#5b3d28;
-		font-size:36px;
-		margin-top:50px;}
+        /* REVIEWS GRID */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .review-card { background: white; border: 1px solid rgba(197, 160, 89, 0.15); border-radius: 4px; padding: 40px 35px; transition: all 0.4s ease; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--card-shadow); }
+        .review-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.08); }
+        .review-card h4 { font-size: 1.4rem; margin-bottom: 5px; font-weight: 600; color: var(--primary-dark); }
+        .review-card .stars { color: var(--accent-gold); font-size: 16px; letter-spacing: 2px; margin-bottom: 20px; }
+        .review-card p { color: #555; font-size: 1rem; font-style: italic; font-family: 'Playfair Display', serif; line-height: 1.6; }
+        
+        /* BACK BUTTON */
+        .action-wrapper { text-align: center; margin-top: 60px; }
+        .btn-gold { display: inline-block; background: var(--accent-gold); color: var(--primary-dark); border: 1px solid var(--accent-gold); padding: 14px 35px; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 700; border-radius: 2px; text-decoration: none; cursor: pointer; transition: 0.3s ease; }
+        .btn-gold:hover { background: transparent; color: var(--accent-gold); }
 
-		.logbook-entry, .review-entry 
-		{background-color: white;
-		border: 1px solid #d6c1a5;
-		margin-bottom: 30px;
-		padding: 25px;
-		border-radius: 12px;
-		box-shadow: 2px 4px 12px rgba(0,0,0,0.08);
-		transition: 0.3s ease;}
+        /* FLOATING WHATSAPP CONCIERGE */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #1c1a17; border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 15px 25px; border-radius: 50px; display: flex; align-items: center; gap: 12px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+        .whatsapp-float:hover { background-color: var(--accent-gold); color: var(--primary-dark); transform: scale(1.05); }
 
-		.logbook-entry:hover, .review-entry:hover 
-		{transform: translateY(-4px);}
+        /* FOOTER */
+        footer { background-color: #11100e; color: #777; text-align: center; padding: 70px 20px; font-size: 0.9rem; border-top: 1px solid rgba(197, 160, 89, 0.1); margin-top: 100px; }
+        footer h2 { color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 4px; margin-bottom: 12px; font-weight: 400; }
+        footer span { color: var(--accent-gold); }
 
-		.entry-meta 
-		{font-size: 0.9em;
-		color: #666;
-		margin-bottom: 15px;}
-
-		.stars 
-		{color: #f5b50a;
-		font-size: 18px;}
-
-		.logbook-entry img 
-		{width: 100%;
-		border-radius: 10px;
-		margin-top: 15px;}
-
-		.back-home
-		{display:inline-block;
-		margin:40px auto 0;
-		padding:12px 20px;
-		text-align:center;
-		background-color:#8b6a45;
-		color:white;
-		border-radius:5px;
-		text-decoration:none;}
-
-		.contact-section
-		{margin-top:60px;
-		text-align:center;
-		background-color:#ede3d1;
-		padding:40px;
-		border-radius:12px;}
-
-		.contact-section p
-		{margin-bottom:10px;
-		font-size:18px;}
-
-		footer
-		{background-color:#5b3d28;
-		color:white;
-		text-align:center;
-		padding:30px 20px;
-		margin-top:60px;}
-
-		.menu-toggle
-		{font-size:30px;
-		color:white;
-		background:none;
-		border:none;
-		cursor:pointer;
-		position:fixed;
-		top:20px;
-		left:20px;
-		z-index:1000;}
-
-		.menu
-		{display:none;
-		flex-direction:column;
-		position:fixed;
-		top:60px;
-		left:0;
-		width:100%;
-		background-color:rgba(0,0,0,0.95);
-		padding:30px 0;
-		text-align:center;
-		z-index:999;}
-
-		.menu a
-		{color:white;
-		text-decoration:none;
-		padding:15px 0;
-		font-size:20px;
-		display:block;}
-
-		.menu a:hover
-		{background-color:rgba(255,255,255,0.1);}
-
-		@media(max-width:768px){
-		.package
-		{padding:20px;}
-		h1{font-size:36px;}}
-
-
-</style>
+        @media (max-width: 900px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: #1c1a17; padding: 30px 0; text-align: center; gap: 20px; border-bottom: 1px solid var(--accent-gold); }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero-header h1 { font-size: 2.8rem; }
+            .hero-header p { font-size: 1.2rem; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- MENU -->
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="lanyonvale_logo 2.jpeg" alt="Lanyonvale Logo">
+            <h2>Lanyonvale</h2>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="price_list.html">Price List</a>
+            <a href="logbook.html" class="active">Hunters Logbook</a>
+            <a href="team.html">Meet the Team</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-<div class="menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="packages.html">Packages</a>
-  <a href="price_list.html">Price List</a>
-  <a href="logbook.html">Hunters Logbook</a>
-  <a href="team.html">Meet the Team</a>
-  <a href="faqs.html">FAQs</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-</div>
+    <!-- HERO HEADER -->
+    <header class="hero-header">
+        <p>Lanyonvale Safaris</p>
+        <h1>The Hunters' Chronicles</h1>
+        <p>Authenticated Field Journals, Fair-Chase Records, and Legacy Guest Testimonials</p>
+        <img class="sa-flag-badge" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South Africa">
+    </header>
 
-<script>
-  function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";}
-</script>
+    <div class="container">
 
-<!-- HEADER -->
-<header>
+        <!-- LOGBOOK SECTION -->
+        <h2 class="section-title">Hunters’ Logbook</h2>
+        <p class="section-subtitle">True accounts of pursuit and deep reverence for the Karoo veld</p>
 
-<img class="sa-flag" src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South African Flag">
+        <div class="split-section">
+            <div class="split-text">
+                <h3>Tihard Strydom — Kudu Bull</h3>
+                <div class="entry-location">April 2026 • Farm Spioenkop, Northern Cape</div>
+                <p class="logbook-quote">
+                    “An unforgettable Karoo hunt. The professionalism from the Lanyonvale team stood out from the moment we stepped into the veld. The kudu hunt was challenging, ethical, and one of the most rewarding experiences I’ve ever had. A memory I will carry for life.”
+                </p>
+            </div>
+            <div class="split-image">
+                <img src="gallery6.jpeg" alt="Tihard Trophy Kudu Close up">
+            </div>
+        </div>
 
-<div>
-<img src="lanyonvale_logo.jpeg" alt="Lanyonvale Safari's Logo" style="max-width:140px; margin-bottom:20px;">
-<h1>Lanyonvale Safaris</h1>
-<p style="font-size:22px; font-style:italic;">
-Hunters’ Logbook & Guest Experiences
-</p>
-</div>
-</header>
+        <hr style="border: 0; height: 1px; background: rgba(197, 160, 89, 0.2); margin: 100px 0;">
 
-<hr style="border:4px groove #8b6a45; margin:0;">
+        <!-- REVIEWS SECTION -->
+        <h2 class="section-title">Guest Reviews</h2>
+        <p class="section-subtitle">Reflections on our signature hospitality and attention to detail</p>
 
-<div class="container">
+        <div class="reviews-grid">
+            
+            <div class="review-card">
+                <div>
+                    <h4>Jana Cilliers</h4>
+                    <div class="entry-location" style="margin-bottom: 10px;">South Africa</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>“Our family visit to Lanyonvale Safaris was something truly special. From the warm welcome to the peaceful Karoo evenings, everything felt personal and well cared for. It wasn’t just a trip — it felt like being part of something bigger.”</p>
+            </div>
 
-<h2>🦌 Hunters’ Logbook</h2>
+            <div class="review-card">
+                <div>
+                    <h4>Abri Cilliers</h4>
+                    <div class="entry-location" style="margin-bottom: 10px;">South Africa</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>“A beautifully run safari experience with incredible attention to detail. The landscapes, sunsets, and hospitality made this one of the most memorable hunting trips I’ve ever experienced in South Africa.”</p>
+            </div>
 
-<div class="logbook-entry">
+            <div class="review-card">
+                <div>
+                    <h4>Franco Cilliers</h4>
+                    <div class="entry-location" style="margin-bottom: 10px;">Professional Hunter</div>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>“At Lanyonvale Safaris we believe a hunt is about respect — for the animal, the land, and the tradition behind it. Every client leaves with more than a trophy; they leave with a story from the Karoo.”</p>
+            </div>
 
-<h3>Tihard Strydom – Kudu Bull</h3>
+        </div>
 
-<div class="entry-meta">
-April 2026 | Farm Spioenkop, Northern Cape
-</div>
+        <!-- RETURN LINK -->
+        <div class="action-wrapper">
+            <a href="index.html" class="btn-gold">← Return To Home</a>
+        </div>
 
-<p>
-“An unforgettable Karoo hunt. The professionalism from the Lanyonvale team stood out from the moment we stepped into the veld. The kudu hunt was challenging, ethical, and one of the most rewarding experiences I’ve ever had. A memory I will carry for life.”
-</p>
+    </div>
 
-<img src="gallery6.jpeg" alt="Tihard Kudu Hunt">
+    <!-- FLOATING WHATSAPP CONCIERGE -->
+    <a href="https://wa.me/27832888106?text=Hi%20Franco,%20I%20am%20interested%20in%20reading%20more%20chronicles%20or%20booking%20a%20safari." class="whatsapp-float" id="dynamic-whatsapp" target="_blank">
+        <span>💬</span> WhatsApp Concierge
+    </a>
 
-</div>
+    <!-- FOOTER -->
+    <footer>
+        <img src="lanyonvale_logo 2.jpeg" alt="Lanyonvale Logo" style="height: 65px; margin-bottom: 25px; opacity: 0.6; border-radius: 4px; border: 1px solid var(--accent-gold);">
+        <h2>LANYONVALE SAFARIS</h2>
+        <p>Est. 2025 • Experience the Deep Luxury of the Great Karoo</p>
+        <p style="margin-top: 35px; font-size: 0.78rem; color: #444; letter-spacing: 1px;">
+            © 2026 Lanyonvale Safaris. Handcrafted with absolute precision. | Patron: <span>Tihard Strydom</span>
+        </p>
+    </footer>
 
-<h2>🌟 Guest Reviews</h2>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById("nav-links");
+            nav.classList.toggle("active");
+        }
 
-<div class="review-entry">
-
-<h3>Jana Cilliers (South Africa)</h3>
-
-<div class="stars">★★★★★</div>
-
-<p>
-“Our family visit to Lanyonvale Safaris was something truly special. From the warm welcome to the peaceful Karoo evenings, everything felt personal and well cared for. It wasn’t just a trip — it felt like being part of something bigger.”
-</p>
-
-</div>
-
-<div class="review-entry">
-
-<h3>Abri Cilliers (South Africa)</h3>
-
-<div class="stars">★★★★★</div>
-
-<p>“A beautifully run safari experience with incredible attention to detail. The landscapes, sunsets, and hospitality made this one of the most memorable hunting trips I’ve ever experienced in South Africa.”</p>
-
-</div>
-
-<div class="review-entry">
-
-<h3>Franco Cilliers – Professional Hunter</h3>
-
-<div class="stars">★★★★★</div>
-
-<p>“At Lanyonvale Safaris we believe a hunt is about respect — for the animal, the land, and the tradition behind it. Every client leaves with more than a trophy; they leave with a story from the Karoo.”</p>
-
-</div>
-
-<div style="text-align:center;">
-<a href="index.html" class="back-home">← Back to Home</a>
-</div>
-
-</div>
-
-<footer>
-<p>
-&copy; 2026 Lanyonvale Safaris | Proudly South African 🇿🇦 | Tihard Strydom 😁
-</p>
-</footer>
-
+        // CONNECT TO HOMEPAGE VIP REGISTRY SYSTEM (IF CREATED)
+        window.onload = function() {
+            const stored = localStorage.getItem('lanyonvale_vip_profile');
+            if(stored) {
+                const profile = JSON.parse(stored);
+                const baseText = `Hi Franco, this is VIP Guest ${profile.name} from ${profile.country}. Tracing back logs, I want to map out my tailored Karoo safari booking.`;
+                document.getElementById('dynamic-whatsapp').href = `https://wa.me/27832888106?text=${encodeURIComponent(baseText)}`;
+            }
+        };
+    </script>
 </body>
 </html>
